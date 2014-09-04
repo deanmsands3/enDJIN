@@ -1,0 +1,81 @@
+{
+    "config": {
+        "resolution": {
+            "width": 1600,
+            "height": 900
+        },
+        "input": {
+            "up": "w",
+            "down": "s",
+            "left": "a",
+            "right": "d"
+        }
+    },
+    "actors": {
+        "gnome": {
+            "assets": {
+                "folder": "gnome",
+                "idle": {
+                    "sprite": "idle.png"
+                },
+                "walk": {
+                    "sprite": "walk.png",
+                    "sound": "footsteps.wav"
+                },
+                "stun": {
+                    "sprite": "stun.png",
+                    "sound": "ack.wav"
+                },
+                "melee": {
+                    "sprite": ".png",
+                    "sound": "punch.wav"
+                },
+                "range": "range.png",
+                "ultimate": "ultimate.png",
+                "death": "death.png"
+            }
+        },
+        "goblin": {
+            "assets": {
+                "folder": "goblin",
+                "idle": {
+                    "sprite": "idle.png"
+                },
+                "walk": {
+                    "sprite": "walk.png",
+                    "sound": "footsteps.wav"
+                },
+                "stun": {
+                    "sprite": "stun.png",
+                    "sound": "ack.wav"
+                },
+                "melee": {
+                    "sprite": "stab.png",
+                    "sound": "stab.wav"
+                },
+                "death": "death.png"
+            },
+            "willowarlock": {
+                "assets": {
+                    "folder": "willowarlock",
+                    "idle": {
+                        "sprite": "idle.png"
+                    },
+                    "walk": "walk.png",
+                    "stun": "stun.png",
+                    "range": "range.png",
+                    "death": "death.png"
+                }
+            },
+            "tankbot": {
+                "assets": {
+                    "folder": "tankbot",
+                    "walk": "walk.png",
+                    "stun": "stun.png",
+                    "range": "range.png",
+                    "death": "death.png"
+                }
+            }
+        }
+    }
+}
