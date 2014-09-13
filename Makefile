@@ -1,4 +1,4 @@
-OBJS =		Game.o ConfigParser.o enDJIN.o
+OBJS =		GameScreen.o Game.o ConfigParser.o enDJIN.o
 
 INCLUDES = -I c:/MinGW/include -I c:/Python27/include
 
