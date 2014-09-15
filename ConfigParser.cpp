@@ -7,18 +7,19 @@
 
 #include "ConfigParser.h"
 
-ConfigParser::ConfigParser(const std::string &jsonDocument) {
-	Json::Reader *jsonReader=new Json::Reader();
-	Json::Value jsonRoot;
-	bool greatSuccess=jsonReader->parse(jsonDocument,jsonRoot, true);
-	if(!greatSuccess){
-		std::exit(-1);
+namespace enDJIN{
+	ConfigParser::ConfigParser(const std::string &jsonDocument) {
+		Json::Reader *jsonReader=new Json::Reader();
+		Json::Value jsonRoot;
+		bool greatSuccess=jsonReader->parse(jsonDocument,jsonRoot, true);
+		if(!greatSuccess){
+			std::exit(-1);
+		}
+		const Json::Value config = jsonRoot["config"];
+
 	}
-	const Json::Value config = jsonRoot["config"];
 
-}
-
-ConfigParser::~ConfigParser() {
-	// TODO Auto-generated destructor stub
-}
-
+	ConfigParser::~ConfigParser() {
+		// TODO Auto-generated destructor stub
+	}
+};

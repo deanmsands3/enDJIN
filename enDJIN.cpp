@@ -9,7 +9,7 @@
 #include "Game.h"
 const std::string indexFile="index.json";
 int main(int argc, char *argv[]) {
-	Game *theGame = new Game(indexFile);
+	enDJIN::Game *theGame = new enDJIN::Game(indexFile);
 	delete theGame;
 	return 0;
 }

@@ -6,13 +6,14 @@
  */
 
 #include "GameScreen.h"
+namespace enDJIN{
+	GameScreen::GameScreen() {
+		// TODO Auto-generated constructor stub
 
-GameScreen::GameScreen() {
-	// TODO Auto-generated constructor stub
+	}
 
+	GameScreen::~GameScreen() {
+		// TODO Auto-generated destructor stub
+	}
+	GameScreen *GameScreen::updateGameScreen(){return this;}
 }
-
-GameScreen::~GameScreen() {
-	// TODO Auto-generated destructor stub
-}
-GameScreen *GameScreen::updateGameScreen(){return this;}

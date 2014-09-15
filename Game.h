@@ -15,12 +15,13 @@
 #include <Thor/Math/Random.hpp>
 #include <Thor/Time/CallbackTimer.hpp>
 #include "ConfigParser.h"
-class Game {
-	ConfigParser *config;
-	sf::RenderWindow *renderWin;
-public:
-	Game(const std::string &index_json);
-	virtual ~Game();
+namespace enDJIN{
+	class Game {
+		ConfigParser *config;
+		sf::RenderWindow *renderWin;
+	public:
+		Game(const std::string &index_json);
+		virtual ~Game();
+	};
 };
-
 #endif /* GAME_H_ */

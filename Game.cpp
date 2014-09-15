@@ -7,6 +7,7 @@
 
 #include "Game.h"
 #include "GameScreen.h"
+namespace enDJIN{
 Game::Game(const std::string &index_json) {
 	// Create SFML's window.
 	config = new ConfigParser(index_json);
@@ -20,4 +21,4 @@ Game::Game(const std::string &index_json) {
 Game::~Game() {
 	renderWin->close();
 }
-
+};

@@ -17,10 +17,11 @@
 #include <cstring>
 #include <Python.h>
 #include <json/json.h>
-class ConfigParser {
-public:
-	ConfigParser(const std::string &jsonDocument);
-	virtual ~ConfigParser();
+namespace enDJIN{
+	class ConfigParser {
+	public:
+		ConfigParser(const std::string &jsonDocument);
+		virtual ~ConfigParser();
+	};
 };
-
 #endif /* CONFIGPARSER_H_ */
