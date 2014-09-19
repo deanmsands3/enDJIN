@@ -13,9 +13,15 @@
 namespace enDJIN {
 
 class Actor: public Entity {
+private:
+	Vect2D velocity;
 public:
+	void update();
 	Actor();
 	virtual ~Actor();
+
+	Vect2D getVelocity() const;
+	void setVelocity(Vect2D velocity);
 };
 
 } /* namespace enDJIN */
