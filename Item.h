@@ -14,7 +14,7 @@ namespace enDJIN {
 
 class Item: public Entity {
 public:
-	Item();
+	Item(std::string filename);
 	virtual ~Item();
 };
 

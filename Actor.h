@@ -14,14 +14,14 @@ namespace enDJIN {
 
 class Actor: public Entity {
 private:
-	Vect2D velocity;
+	sf::Vector2f velocity;
 public:
 	void update();
-	Actor();
+	Actor(std::string filename);
 	virtual ~Actor();
 
-	Vect2D getVelocity() const;
-	void setVelocity(Vect2D velocity);
+	sf::Vector2f getVelocity() const;
+	void setVelocity(sf::Vector2f velocity);
 };
 
 } /* namespace enDJIN */

@@ -14,7 +14,7 @@ namespace enDJIN {
 
 class Monster: public Actor {
 public:
-	Monster();
+	Monster(std::string filename);
 	virtual ~Monster();
 };
 

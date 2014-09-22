@@ -7,31 +7,24 @@
 
 #ifndef ENTITY_H_
 #define ENTITY_H_
-
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 namespace enDJIN {
-typedef struct Vect2D{
-	float x;
-	float y;
-};
-typedef struct Vect3D{
-	float x;
-	float y;
-	float z;
-};
 class Entity {
 private:
-	Vect2D location;
+	sf::Sprite  _sprite;
+	sf::Texture _texture;
+	bool _isLoaded;
+	std::string _filename;
 public:
-	Entity();
+	Entity(std::string filename);
 	virtual ~Entity();
 	virtual void update();
-	Vect2D getLocation() const {
-		return location;
-	}
-
-	void setLocation(Vect2D location) {
-		this->location = location;
-	}
+	virtual void Load(std::string filename);
+	virtual void Draw(sf::RenderWindow & window);
+	sf::Vector2f getLocation() const;
+	void setLocation(const sf::Vector2f& position);
+	void setLocation(float x, float y);
 };
 
 } /* namespace enDJIN */

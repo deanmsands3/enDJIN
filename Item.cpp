@@ -9,9 +9,8 @@
 
 namespace enDJIN {
 
-Item::Item() {
+Item::Item(std::string filename):Entity(filename){
 	// TODO Auto-generated constructor stub
-
 }
 
 Item::~Item() {

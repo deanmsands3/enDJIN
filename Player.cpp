@@ -9,7 +9,7 @@
 
 namespace enDJIN {
 
-Player::Player() {
+Player::Player(std::string filename):Actor(filename) {
 	// TODO Auto-generated constructor stub
 
 }

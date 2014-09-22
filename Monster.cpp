@@ -9,7 +9,7 @@
 
 namespace enDJIN {
 
-Monster::Monster() {
+Monster::Monster(std::string filename):Actor(filename) {
 	// TODO Auto-generated constructor stub
 
 }
