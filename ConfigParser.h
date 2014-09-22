@@ -19,9 +19,11 @@
 #include <json/json.h>
 namespace enDJIN{
 	class ConfigParser {
+	Json::Value config;
 	public:
 		ConfigParser(const std::string &jsonDocument);
 		virtual ~ConfigParser();
-	};
+	const Json::Value *getConfig() const;
+};
 };
 #endif /* CONFIGPARSER_H_ */

@@ -1,4 +1,4 @@
-OBJS =	Entity.o Item.o ActorState.o Actor.o Monster.o Player.o Tile.o TileMap.o Level.o GameScreen.o Game.o ConfigParser.o enDJIN.o
+OBJS =	Entity.o Item.o ActorState.o Actor.o Monster.o Player.o Tile.o TileMap.o GameScreen.o SplashScreen.o Level.o Game.o ConfigParser.o enDJIN.o
 
 INCLUDES = -I c:/MinGW/include -I c:/Python27/include
 

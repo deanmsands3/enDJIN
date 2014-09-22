@@ -16,4 +16,6 @@ namespace enDJIN{
 		// TODO Auto-generated destructor stub
 	}
 	GameScreen *GameScreen::updateGameScreen(){return this;}
+	void GameScreen::Show(sf::RenderWindow& window){}
+
 }

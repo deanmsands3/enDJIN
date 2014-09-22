@@ -11,6 +11,9 @@
             "right": "d"
         }
     },
+    "splashscreen":{
+    	"image":"splashscreen.jpg"
+    },
     "actors": {
         "gnome": {
             "assets": {
