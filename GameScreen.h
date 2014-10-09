@@ -8,9 +8,12 @@
 #ifndef GAMESCREEN_H_
 #define GAMESCREEN_H_
 #include <SFML/Graphics.hpp>
+#include <map>
 #include "ConfigParser.h"
+#include "Types.h"
 namespace enDJIN{
 	class GameScreen {
+		std::map<sf::Event, voidFuncPtr> *EventMap;
 	public:
 		GameScreen();
 		virtual ~GameScreen();

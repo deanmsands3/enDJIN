@@ -9,6 +9,7 @@
 namespace enDJIN{
 	GameScreen::GameScreen() {
 		// TODO Auto-generated constructor stub
+		EventMap = new std::map<sf::Event,voidFuncPtr>();
 
 	}
 
