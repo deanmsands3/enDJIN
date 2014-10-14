@@ -16,7 +16,7 @@ namespace enDJIN {
 class SplashScreen: public GameScreen {
 	sf::Sprite _sprite;
 public:
-	SplashScreen(Json::Value *JV);
+	SplashScreen(sf::RenderWindow *window, Json::Value *JV);
 	virtual ~SplashScreen();
 	virtual void Show(sf::RenderWindow& window);
 };
