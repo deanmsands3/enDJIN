@@ -66,4 +66,7 @@ Entity::~Entity() {
 }
 void Entity::update(){
 }
+void updateEntity(Entity* that){
+	that->update();
+}
 } /* namespace enDJIN */

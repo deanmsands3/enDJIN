@@ -25,6 +25,7 @@ public:
 	sf::Vector2f getLocation() const;
 	void setLocation(const sf::Vector2f& position);
 	void setLocation(float x, float y);
+	static void updateEntity(Entity* that);
 };
 
 } /* namespace enDJIN */
