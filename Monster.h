@@ -11,7 +11,14 @@
 #include "Actor.h"
 
 namespace enDJIN {
-
+//Known States:
+//Idle
+//Wandering
+//Chasing Player
+//Long Range Attack
+//Melee Attack
+//"Ouch"
+//Dying
 class Monster: public Actor {
 public:
 	Monster(std::string filename);
