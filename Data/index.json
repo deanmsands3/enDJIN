@@ -15,9 +15,10 @@
     	"image":"splashscreen.jpg"
     },
     "actors": {
-        "gnome": {
+		"folder":"Actors",
+		"gnome": {
             "assets": {
-                "folder": "gnome",
+                "folder": "Gnome",
                 "idle": {
                     "sprite": "idle.png"
                 },
@@ -40,7 +41,7 @@
         },
         "goblin": {
             "assets": {
-                "folder": "goblin",
+                "folder": "Goblin",
                 "idle": {
                     "sprite": "idle.png"
                 },
@@ -60,7 +61,7 @@
             },
             "willowarlock": {
                 "assets": {
-                    "folder": "willowarlock",
+                    "folder": "WilloWarlock",
                     "idle": {
                         "sprite": "idle.png"
                     },
@@ -72,7 +73,7 @@
             },
             "tankbot": {
                 "assets": {
-                    "folder": "tankbot",
+                    "folder": "TankBot",
                     "walk": "walk.png",
                     "stun": "stun.png",
                     "range": "range.png",
