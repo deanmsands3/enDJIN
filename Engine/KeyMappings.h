@@ -8,6 +8,7 @@
 #ifndef KEYMAPPINGS_H_
 #define KEYMAPPINGS_H_
 #include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 #include <unordered_map>
 namespace enDJIN {
 

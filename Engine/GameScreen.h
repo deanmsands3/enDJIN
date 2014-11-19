@@ -11,7 +11,7 @@
 #include <map>
 #include "ConfigParser.h"
 #include "Types.h"
-#include "Entity.h"
+#include "../Entities/Entity.h"
 namespace enDJIN{
 	class GameScreen {
 		sf::RenderWindow *renderWin;

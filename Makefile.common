@@ -3,7 +3,7 @@ ENGINEOBJECTS = Engine/ConfigParser.o Engine/Game.o Engine/GameScreen.o Engine/K
 
 #Entity Objects
 ACTORS = Entities/Actors/Actor.o Entities/Actors/ActorState.o Entities/Actors/Monster.o Entities/Actors/Player.o
-STATICS = Entities/Statis/Item.o
-ENTITYOBJECTS = Entity.o $(ACTORS) $(STATICS) 
+STATICS = Entities/Statics/Item.o
+ENTITYOBJECTS = Entities/Entity.o $(ACTORS) $(STATICS) 
 
 OBJS =	$(ENGINEOBJECTS) $(ENTITYOBJECTS) enDJIN.o
