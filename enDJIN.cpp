@@ -6,7 +6,7 @@
 // Description : Hello World in C, Ansi-style
 //============================================================================
 
-#include "Game.h"
+#include "Engine/Game.h"
 const std::string indexFile="index.json";
 int main(int argc, char *argv[]) {
 	enDJIN::Game *theGame = new enDJIN::Game(indexFile);

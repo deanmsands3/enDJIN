@@ -1,3 +1,7 @@
+#Include common defines
+include Makefile.common
+
+#Determine appropriate system
 ifdef SystemRoot
 	#We're in Windows
 	include Makefile.win

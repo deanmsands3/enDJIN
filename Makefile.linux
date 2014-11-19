@@ -2,9 +2,6 @@
 INCLUDES = -I /usr/include/python2.7 -I /usr/include/jsoncpp
 TARGET = enDJIN
 
-OBJS =	Entity.o Item.o ActorState.o Actor.o Monster.o Player.o Tile.o TileMap.o GameScreen.o SplashScreen.o Level.o Game.o ConfigParser.o enDJIN.o
-
-
 LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp
 
 
