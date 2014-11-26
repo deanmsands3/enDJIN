@@ -7,11 +7,14 @@
 
 #include "GameScreen.h"
 namespace enDJIN{
-	GameScreen::GameScreen(sf::RenderWindow *window) {
+	GameScreen::GameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV) {
 		renderWin=window;
+		jData=JV;
 		// TODO Auto-generated constructor stub
-		EventMap = new std::map<sf::Event,voidFuncPtr>();
-		EntityMap = new std::map<uint64_t,Entity*>();
+		eventMap = new std::map<sf::Event,voidFuncPtr>();
+		entityMap = new std::map<uint64_t,Entity*>();
+		actionEffectMap=new std::unordered_map<std::string,voidFuncPtr>();
+		registerKeyMappings(keyMap);
 	}
 
 	GameScreen::~GameScreen() {
@@ -29,7 +32,7 @@ namespace enDJIN{
 		renderWin->display();
 	}
 	GameScreen* GameScreen::processEntities() {
-		for (const auto& thisEntity : *EntityMap) {
+		for (const auto& thisEntity : *entityMap) {
 		    thisEntity.second->update();
 		}
 		return this;
@@ -61,5 +64,25 @@ namespace enDJIN{
 	void GameScreen::setRenderWin(const sf::RenderWindow*& renderWin) {
 		this->renderWin = (sf::RenderWindow*)renderWin;
 	}
-}
+
+	std::unordered_map<std::string, voidFuncPtr>* GameScreen::getActionEffectMap() {
+		return this->actionEffectMap;
+	}
+	std::map<uint64_t, Entity*>* GameScreen::getEntityMap(){
+		return this->entityMap;
+	}
+
+	void GameScreen::registerKeyMappings(KeyMappings* keyMap) {
+
+	}
+
+	void GameScreen::registerActionMappings() {
+
+	}
+
+	std::map<sf::Event, voidFuncPtr>* GameScreen::getEventMap(){
+		return this->eventMap;
+	}
+
+}	//Namespace enDJIN
 

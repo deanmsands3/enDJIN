@@ -8,10 +8,11 @@
 #include "SplashScreen.h"
 
 namespace enDJIN {
-	SplashScreen::SplashScreen(sf::RenderWindow *window, Json::Value *JV):GameScreen(window) {
+	SplashScreen::SplashScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV):
+		GameScreen(window, keyMap, JV) {
 
 		Json::Value imageValue;
-		JV->get("image",imageValue);
+		jData->get("splash",imageValue);
 		sf::Texture _texture;
 		if(_texture.loadFromFile(imageValue.asString()) != true)
 		{

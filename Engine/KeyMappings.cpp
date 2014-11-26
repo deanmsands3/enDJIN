@@ -17,8 +17,15 @@ KeyMappings::KeyMappings() {
 KeyMappings::~KeyMappings() {
 	// TODO Auto-generated destructor stub
 }
-bool add_key(std::string new_key,sf::Event new_event){
 
+bool KeyMappings::map_key(sf::Keyboard::Key keyPressed, std::string newEventName){
+	keyActionMap[(unsigned int)keyPressed]=newEventName;
+//	try{
+//		voidFuncPtr thisFunction=(*actionEffectMap)[newEventName];
+//		keyEffectMap[(unsigned int)keyPressed]=thisFunction;
+//	}catch(std::exception &e){
+//
+//	}
 }
 
 } /* namespace enDJIN */

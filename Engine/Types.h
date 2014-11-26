@@ -1,6 +1,14 @@
 //Useful Types and Defines
 #ifndef __TYPES_H__
 #define __TYPES_H__
+//Set C++ Dialect
+#ifdef __cplusplus
+#undef __cplusplus
+#endif
+#define __cplusplus 201103L
+
+#include <cstdint>
+
 typedef void (*voidFuncPtr)();
 typedef void (*voidFloatFuncPtr)(float);
 typedef void (*voidBooleanFuncPtr)(bool);
@@ -48,5 +56,6 @@ typedef union{
 #ifndef FAILURE
 	#define FAILURE (~SUCCESS)
 #endif
+
 
 #endif

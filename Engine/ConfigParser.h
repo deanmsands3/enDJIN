@@ -9,7 +9,7 @@
 #define CONFIGPARSER_H_
 #define SCREEN_WIDTH	1600
 #define SCREEN_HEIGHT	900
-
+#include "Types.h"
 #include <array>
 #include <memory>
 #include <cstdlib>
@@ -17,13 +17,16 @@
 #include <cstring>
 #include <Python.h>
 #include <json/json.h>
+#include "KeyMappings.h"
+
 namespace enDJIN{
 	class ConfigParser {
 	Json::Value config;
 	public:
 		ConfigParser(const std::string &jsonDocument);
 		virtual ~ConfigParser();
-	const Json::Value *getConfig() const;
-};
+		const Json::Value *getConfig() const;
+		KeyMappings *generateKeyMap();
+	};
 };
 #endif /* CONFIGPARSER_H_ */

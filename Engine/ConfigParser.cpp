@@ -18,11 +18,16 @@ namespace enDJIN{
 
 	}
 
-const Json::Value *ConfigParser::getConfig() const {
-	return &config;
-}
+	const Json::Value *ConfigParser::getConfig() const {
+		return &config;
+	}
 
 	ConfigParser::~ConfigParser() {
 		// TODO Auto-generated destructor stub
 	}
+	KeyMappings* ConfigParser::generateKeyMap(){
+		KeyMappings *keyMap = new KeyMappings();
+		return keyMap;
+	}
+
 };
