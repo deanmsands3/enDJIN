@@ -2,7 +2,7 @@
 INCLUDES = -I /usr/include/python2.7 -I /usr/include/jsoncpp
 TARGET = enDJIN
 
-LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp
+LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp -lssl
 
 
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -std=c++11 $(INCLUDES)
