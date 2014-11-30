@@ -3,7 +3,7 @@ INCLUDES = -I c:/MinGW/include -I c:/Python27/include
 TARGET =	enDJIN.exe
 
 
-LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp
+LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp -lssl
 
 
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 $(INCLUDES)
