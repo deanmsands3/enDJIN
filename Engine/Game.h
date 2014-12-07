@@ -17,6 +17,8 @@
 #include <Thor/Time/CallbackTimer.hpp>
 #include "ConfigParser.h"
 #include "GameScreenFactory.h"
+#include "GameScreen.h"
+
 namespace enDJIN{
 	class Game {
 		ConfigParser *config;

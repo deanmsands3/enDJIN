@@ -17,5 +17,13 @@ GameScreenFactory::GameScreenFactory(Json::Value *JV):jData(JV) {
 GameScreenFactory::~GameScreenFactory() {
 	// TODO Auto-generated destructor stub
 }
+GameScreen* GameScreenFactory::getGameScreen(std::string name, sf::RenderWindow *window, KeyMappings *keyMap){
+	Json::Value *gameScreenJSON=new Json::Value();
+	jData->get(name,gameScreenJSON);
+	return new GameScreen(window, keyMap, gameScreenJSON);
+}
+GameScreen* GameScreenFactory::getInitialGameScreen(sf::RenderWindow *window, KeyMappings *keyMap){
+
+}
 
 } /* namespace enDJIN */

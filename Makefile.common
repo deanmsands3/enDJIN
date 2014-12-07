@@ -1,5 +1,5 @@
 #Engine Objects
-ENGINEOBJECTS = Engine/ConfigParser.o Engine/Game.o Engine/GameScreen.o Engine/KeyMappings.o Engine/Level.o Engine/SplashScreen.o Engine/Tile.o Engine/TileMap.o
+ENGINEOBJECTS = Engine/ConfigParser.o Engine/Game.o Engine/GameScreen.o Engine/GameScreenFactory.o Engine/KeyMappings.o Engine/Level.o Engine/SplashScreen.o Engine/Tile.o Engine/TileMap.o
 
 #Entity Objects
 ACTORS = \

@@ -6,7 +6,7 @@ TARGET =	enDJIN.exe
 LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp -lssl
 
 
-CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 $(INCLUDES)
+CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -std=c++11 $(INCLUDES)
 
 $(TARGET):	$(OBJS)
 	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)

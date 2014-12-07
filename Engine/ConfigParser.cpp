@@ -29,5 +29,9 @@ namespace enDJIN{
 		KeyMappings *keyMap = new KeyMappings();
 		return keyMap;
 	}
+Json::Value ConfigParser::getItem(std::string itemName, int index){
 
+		return config[itemName][index];
+	}
+//gamescreens
 };

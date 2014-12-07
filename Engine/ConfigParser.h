@@ -15,8 +15,9 @@
 #include <cstdlib>
 #include <string>
 #include <cstring>
-#include <Python.h>
+#include <cmath>
 #include <json/json.h>
+#include <Python.h>
 #include "KeyMappings.h"
 
 namespace enDJIN{
@@ -27,6 +28,7 @@ namespace enDJIN{
 		virtual ~ConfigParser();
 		const Json::Value *getConfig() const;
 		KeyMappings *generateKeyMap();
+		Json::Value getItem(std::string itemName, int index);
 	};
 };
 #endif /* CONFIGPARSER_H_ */
