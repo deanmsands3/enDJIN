@@ -1,0 +1,13 @@
+{
+	"_comment": "Config",    
+    "resolution": {
+        "width": 1600,
+        "height": 900
+    },
+    "input": {
+        "up": "w",
+        "down": "s",
+        "left": "a",
+        "right": "d"
+    }
+}

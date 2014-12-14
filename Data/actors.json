@@ -1,0 +1,69 @@
+{
+	"_comment":"Actors",	
+	"folder":"Actors",
+	"player": {
+        "assets": {
+            "folder": "Gnome",
+            "idle": {
+                "sprite": "idle.png"
+            },
+            "walk": {
+                "sprite": "walk.png",
+                "sound": "footsteps.wav"
+            },
+            "stun": {
+                "sprite": "stun.png",
+                "sound": "ack.wav"
+            },
+            "melee": {
+                "sprite": ".png",
+                "sound": "punch.wav"
+            },
+            "range": "range.png",
+            "ultimate": "ultimate.png",
+            "death": "death.png"
+        }
+    },
+    "goblin": {
+        "assets": {
+            "folder": "Goblin",
+            "idle": {
+                "sprite": "idle.png"
+            },
+            "walk": {
+                "sprite": "walk.png",
+                "sound": "footsteps.wav"
+            },
+            "stun": {
+                "sprite": "stun.png",
+                "sound": "ack.wav"
+            },
+            "melee": {
+                "sprite": "stab.png",
+                "sound": "stab.wav"
+            },
+            "death": "death.png"
+        },
+        "willowarlock": {
+            "assets": {
+                "folder": "WilloWarlock",
+                "idle": {
+                    "sprite": "idle.png"
+                },
+                "walk": "walk.png",
+                "stun": "stun.png",
+                "range": "range.png",
+                "death": "death.png"
+            }
+        },
+        "tankbot": {
+            "assets": {
+                "folder": "TankBot",
+                "walk": "walk.png",
+                "stun": "stun.png",
+                "range": "range.png",
+                "death": "death.png"
+            }
+        }
+    }
+}

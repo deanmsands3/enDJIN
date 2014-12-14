@@ -1,0 +1,17 @@
+{
+	"_comment":"Game Screens",		
+	"start":{
+		"type":"splashscreen",
+    	"splash":"splashscreen.jpeg",
+    	"next":"start_menu"
+    },
+    "start_menu":{
+    	"type":"menu",
+    	"next":"exit"
+    },
+    "exit":{
+		"type":"splashscreen",
+    	"splash":"exit.jpeg",
+    	"next":""
+    }
+}
