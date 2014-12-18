@@ -13,15 +13,24 @@
             },
             "stun": {
                 "sprite": "stun.png",
-                "sound": "ack.wav"
+                "sound": "stun.wav"
             },
             "melee": {
-                "sprite": ".png",
-                "sound": "punch.wav"
+                "sprite": "melee.png",
+                "sound": "melee.wav"
             },
-            "range": "range.png",
-            "ultimate": "ultimate.png",
-            "death": "death.png"
+            "range": {
+            	"sprite":  "range.png",
+        		"sound":  "range.wav"
+            },
+            "ultimate": {
+            	"sprite":  "ultimate.png",
+        		"sound":  "ultimate.wav"
+            },
+            "death":{
+            	"sprite":  "death.png",
+        		"sound":  "death.wav"
+            }
         }
     },
     "goblin": {
@@ -42,28 +51,59 @@
                 "sprite": "stab.png",
                 "sound": "stab.wav"
             },
-            "death": "death.png"
-        },
-        "willowarlock": {
-            "assets": {
-                "folder": "WilloWarlock",
-                "idle": {
-                    "sprite": "idle.png"
-                },
-                "walk": "walk.png",
-                "stun": "stun.png",
-                "range": "range.png",
-                "death": "death.png"
+            "death": {
+                "sprite": "death.png",
+                "sound": "death.wav"
             }
-        },
-        "tankbot": {
-            "assets": {
-                "folder": "TankBot",
-                "walk": "walk.png",
-                "stun": "stun.png",
-                "range": "range.png",
-                "death": "death.png"
+		}
+	},
+    "willowarlock": {
+        "assets": {
+            "folder": "WilloWarlock",
+            "idle": {
+                "sprite": "idle.png"
+            },
+            "walk": {
+                "sprite": "walk.png",
+                "sound": "footsteps.wav"
+            },
+            "stun": {
+                "sprite": "stun.png",
+                "sound": "ack.wav"
+            },
+            "range": {
+            	"sprite":  "range.png",
+        		"sound":  "range.wav"
+            },
+            "death": {
+                "sprite": "death.png",
+                "sound": "death.wav"
+            }
+        }
+    },
+    "tankbot": {
+        "assets": {
+            "folder": "TankBot",
+            "idle": {
+                "sprite": "idle.png"
+            },
+            "walk": {
+                "sprite": "walk.png",
+                "sound": "footsteps.wav"
+            },
+            "stun": {
+                "sprite": "stun.png",
+                "sound": "ack.wav"
+            },
+            "range": {
+            	"sprite":  "range.png",
+        		"sound":  "range.wav"
+            },
+            "death": {
+                "sprite": "death.png",
+                "sound": "death.wav"
             }
         }
     }
 }
+

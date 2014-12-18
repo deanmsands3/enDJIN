@@ -19,6 +19,17 @@ namespace enDJIN {
 //Melee Attack
 //"Ouch"
 //Dying
+typedef enum {
+	IDLE,
+	WANDERING,
+	HUNTING,
+	FALLING,
+	ATTACKING,
+	ATTACKINGFAR,
+	STUNNED,
+	DYING,
+	DEAD
+}MonsterStates;
 class Monster: public Actor {
 public:
 	Monster(std::string filename);
