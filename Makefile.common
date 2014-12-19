@@ -1,11 +1,9 @@
-#Engine Objects
-ENGINEOBJECTS = Engine/ConfigParser.o Engine/Game.o Engine/GameScreen.o Engine/GameScreenFactory.o Engine/KeyMappings.o Engine/Level.o Engine/SplashScreen.o Engine/Tile.o Engine/TileMap.o
+#Common Makefile
+#Folder defines
+ENGINE_FOLDER = Engine/
+ENTITY_FOLDER = Entities/
 
-#Entity Objects
-ACTORS = \
-	Entities/Actors/Actor.o Entities/Actors/ActorState.o Entities/Actors/MonsterStateFactory.o Entities/Actors/Monster.o \
-	Entities/Actors/Player.o 
-STATICS = Entities/Statics/Item.o
-ENTITYOBJECTS = Entities/Entity.o $(ACTORS) $(STATICS) 
-
-OBJS =	$(ENGINEOBJECTS) $(ENTITYOBJECTS) enDJIN.o
+#Include Makefiles
+include $(ENGINE_FOLDER)Makefile.engine
+include $(ENTITY_FOLDER)Makefile.entities
+OBJS =	$(ENGINE_OBJECTS) $(ENTITY_OBJECTS) enDJIN.o

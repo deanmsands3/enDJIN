@@ -19,21 +19,21 @@ namespace enDJIN {
 //Melee Attack
 //"Ouch"
 //Dying
-typedef enum {
-	IDLE,
-	WANDERING,
-	HUNTING,
-	FALLING,
-	ATTACKING,
-	ATTACKINGFAR,
-	STUNNED,
-	DYING,
-	DEAD
-}MonsterStates;
 class Monster: public Actor {
+	MonsterStates state;
 public:
 	Monster(std::string filename);
 	virtual ~Monster();
+	virtual ActorStates updateIdle();
+	virtual ActorStates updateWandering();
+	virtual ActorStates updateHunting();
+	virtual ActorStates updateRunning();
+	virtual ActorStates updateJumping();
+	virtual ActorStates updateFalling();
+	virtual ActorStates updateAttacking();
+	virtual ActorStates updateAttackingFar();
+	virtual ActorStates updateStunned();
+	virtual ActorStates updateDying();
 };
 
 } /* namespace enDJIN */

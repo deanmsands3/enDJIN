@@ -17,5 +17,35 @@ Monster::Monster(std::string filename):Actor(filename) {
 Monster::~Monster() {
 	// TODO Auto-generated destructor stub
 }
+ActorStates Monster::updateIdle(){
+	return WANDERING;
+}
+ActorStates Monster::updateWandering(){
+	return WANDERING;
+}
+ActorStates Monster::updateHunting(){
+	return HUNTING;
+}
+ActorStates Monster::updateRunning(){
+	return RUNNING;
+}
+ActorStates Monster::updateJumping(){
+	return JUMPING;
+}
+ActorStates Monster::updateFalling(){
+	return FALLING;
+}
+ActorStates Monster::updateAttacking(){
+	return ATTACKING;
+}
+ActorStates Monster::updateAttackingFar(){
+	return ATTACKINGFAR;
+}
+ActorStates Monster::updateStunned(){
+	return STUNNED;
+}
+ActorStates Monster::updateDying(){
+	return DYING;
+}
 
 } /* namespace enDJIN */

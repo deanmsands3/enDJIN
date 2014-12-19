@@ -12,9 +12,23 @@
 
 namespace enDJIN {
 
+typedef enum {
+	IDLE,
+	WANDERING,
+	HUNTING,
+	RUNNING,
+	JUMPING,
+	FALLING,
+	ATTACKING,
+	ATTACKINGFAR,
+	STUNNED,
+	DYING,
+	DEAD
+}ActorStates;
 class Actor: public Entity {
 private:
 	sf::Vector2f velocity;
+	ActorStates state;
 public:
 	void update();
 	Actor(std::string filename);
@@ -22,6 +36,16 @@ public:
 
 	sf::Vector2f getVelocity() const;
 	void setVelocity(sf::Vector2f velocity);
+	virtual ActorStates updateIdle();
+	virtual ActorStates updateWandering();
+	virtual ActorStates updateHunting();
+	virtual ActorStates updateRunning();
+	virtual ActorStates updateJumping();
+	virtual ActorStates updateFalling();
+	virtual ActorStates updateAttacking();
+	virtual ActorStates updateAttackingFar();
+	virtual ActorStates updateStunned();
+	virtual ActorStates updateDying();
 };
 
 } /* namespace enDJIN */

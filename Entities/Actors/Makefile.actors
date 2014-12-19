@@ -1,0 +1,4 @@
+#Actor Makefile
+
+#Actor Objects
+ACTOR_OBJS=$(ACTOR_FOLDER)Actor.o $(ACTOR_FOLDER)Monster.o $(ACTOR_FOLDER)MonsterFactory.o $(ACTOR_FOLDER)Player.o

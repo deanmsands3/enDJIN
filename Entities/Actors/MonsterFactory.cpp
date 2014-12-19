@@ -1,20 +1,20 @@
 /*
- * MonsterStateFactory.cpp
+ * MonsterFactory.cpp
  *
  *  Created on: Nov 22, 2014
  *      Author: dean
  */
 
-#include "MonsterStateFactory.h"
+#include "MonsterFactory.h"
 
 namespace enDJIN {
 
-MonsterStateFactory::MonsterStateFactory() {
+MonsterFactory::MonsterFactory(Json::Value *JV) {
 	// TODO Auto-generated constructor stub
 
 }
 
-MonsterStateFactory::~MonsterStateFactory() {
+MonsterFactory::~MonsterFactory() {
 	// TODO Auto-generated destructor stub
 }
 

@@ -17,5 +17,7 @@ Player::Player(std::string filename):Actor(filename) {
 Player::~Player() {
 	// TODO Auto-generated destructor stub
 }
+void Player::update(){
 
+}
 } /* namespace enDJIN */

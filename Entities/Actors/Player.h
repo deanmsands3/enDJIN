@@ -11,19 +11,10 @@
 #include "Actor.h"
 
 namespace enDJIN {
-typedef enum {
-	IDLE,
-	RUNNING,
-	JUMPING,
-	FALLING,
-	ATTACKING,
-	ATTACKINGFAR,
-	STUNNED,
-	DYING,
-	DEAD
-}PlayerStates;
+
 class Player: public Actor {
 public:
+	void update();
 	Player(std::string filename);
 	virtual ~Player();
 };
