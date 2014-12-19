@@ -2,7 +2,7 @@
 
 #Folder defines
 ACTOR_FOLDER=$(ENTITY_FOLDER)Actors/
-STATIC_FOLDER=$(ENTITY_FOLDER)/Statics/
+STATIC_FOLDER=$(ENTITY_FOLDER)Statics/
 
 #Include Makefiles
 include $(ACTOR_FOLDER)Makefile.actors

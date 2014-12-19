@@ -22,9 +22,9 @@
 
 namespace enDJIN{
 	class ConfigParser {
-	Json::Value config;
+	Json::Value *config;
 	public:
-		ConfigParser(const std::string &jsonDocument);
+		ConfigParser(const Json::Value *newConfig);
 		virtual ~ConfigParser();
 		const Json::Value *getConfig() const;
 		KeyMappings *generateKeyMap();

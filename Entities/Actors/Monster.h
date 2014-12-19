@@ -20,7 +20,6 @@ namespace enDJIN {
 //"Ouch"
 //Dying
 class Monster: public Actor {
-	MonsterStates state;
 public:
 	Monster(std::string filename);
 	virtual ~Monster();

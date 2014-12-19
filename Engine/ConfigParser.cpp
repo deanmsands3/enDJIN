@@ -8,30 +8,25 @@
 #include "ConfigParser.h"
 
 namespace enDJIN{
-	ConfigParser::ConfigParser(const std::string &jsonDocument) {
-		Json::Reader *jsonReader=new Json::Reader();
-		bool greatSuccess=jsonReader->parse(jsonDocument,config, true);
-		if(!greatSuccess){
-			std::exit(-1);
-		}
-
-
+	ConfigParser::ConfigParser(const Json::Value *newConfig){
+		config=((Json::Value *)newConfig);
 	}
 
 	const Json::Value *ConfigParser::getConfig() const {
-		return &config;
+		return config;
 	}
 
 	ConfigParser::~ConfigParser() {
 		// TODO Auto-generated destructor stub
 	}
+
 	KeyMappings* ConfigParser::generateKeyMap(){
 		KeyMappings *keyMap = new KeyMappings();
 		return keyMap;
 	}
-Json::Value ConfigParser::getItem(std::string itemName, int index){
 
-		return config[itemName][index];
+	Json::Value ConfigParser::getItem(std::string itemName, int index){
+		return (*config)[itemName][index];
 	}
 //gamescreens
 };

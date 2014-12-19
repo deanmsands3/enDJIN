@@ -23,7 +23,7 @@ GameScreen* GameScreenFactory::getGameScreen(std::string name, sf::RenderWindow 
 	return new GameScreen(window, keyMap, gameScreenJSON);
 }
 GameScreen* GameScreenFactory::getInitialGameScreen(sf::RenderWindow *window, KeyMappings *keyMap){
-
+	return GameScreenFactory::getGameScreen("start", window, keyMap);
 }
 
 } /* namespace enDJIN */

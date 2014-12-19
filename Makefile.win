@@ -1,17 +1,15 @@
-#We're in Windows
+#We're in Windows. Swell.
 INCLUDES = -I c:/MinGW/include -I c:/Python27/include
 TARGET =	enDJIN.exe
 
-
+#Libraries to be linked in.
 LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp -lssl
 
-
+#C++ flags for compiling
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -std=c++11 $(INCLUDES)
 
 $(TARGET):	$(OBJS)
 	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)
 
-all:	$(TARGET)
-
-clean:
+cleaning:
 	rm -f $(OBJS) $(TARGET)

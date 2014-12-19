@@ -1,0 +1,4 @@
+#Makefile Targets
+all:	banner-Building	$(TARGET)
+
+clean:	banner-Cleaning cleaning

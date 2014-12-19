@@ -6,4 +6,15 @@ ENTITY_FOLDER = Entities/
 #Include Makefiles
 include $(ENGINE_FOLDER)Makefile.engine
 include $(ENTITY_FOLDER)Makefile.entities
-OBJS =	$(ENGINE_OBJECTS) $(ENTITY_OBJECTS) enDJIN.o
+OBJS =	$(ENGINE_OBJS) $(ENTITY_OBJS) enDJIN.o
+
+#Makefile Hacks
+
+#Print variables
+print-%:
+	@echo '$*=$($*)'
+
+#Banner Macro
+banner-%:
+	@echo '$* $(ENGINE_NAME)'
+

@@ -1,4 +1,5 @@
 #Engine Objects
-ENGINE_OBJECTS = $(ENGINE_FOLDER)ConfigParser.o $(ENGINE_FOLDER)Game.o $(ENGINE_FOLDER)GameScreen.o \
+ENGINE_OBJS = \
+	$(ENGINE_FOLDER)DataParser.o $(ENGINE_FOLDER)ConfigParser.o $(ENGINE_FOLDER)Game.o $(ENGINE_FOLDER)GameScreen.o \
 	$(ENGINE_FOLDER)GameScreenFactory.o $(ENGINE_FOLDER)KeyMappings.o $(ENGINE_FOLDER)Level.o \
 	$(ENGINE_FOLDER)SplashScreen.o $(ENGINE_FOLDER)Tile.o $(ENGINE_FOLDER)TileMap.o

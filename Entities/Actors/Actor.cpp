@@ -31,41 +31,73 @@ void Actor::update(){
 	setLocation(t);
 	switch(state){
 	case IDLE:
-		state=updateIdle();
+		state = updateIdle();
 		break;
 	case WANDERING:
-		state=updateWandering();
+		state = updateWandering();
 		break;
 	case HUNTING:
-		state=updateHunting();
+		state = updateHunting();
 			break;
 	case RUNNING:
-		state=updateRunning();
+		state = updateRunning();
 			break;
 	case JUMPING:
-		state=updateJumping();
+		state = updateJumping();
 			break;
 	case FALLING:
-		state=updateFalling();
+		state = updateFalling();
 			break;
 	case ATTACKING:
-		state=updateAttacking();
+		state = updateAttacking();
 		break;
 	case ATTACKINGFAR:
-		state=updateAttackingFar();
+		state = updateAttackingFar();
 		break;
 	case STUNNED:
-		state=updateStunned();
+		state = updateStunned();
 		break;
 	case DYING:
-		state=updateDying();
+		state = updateDying();
 		break;
 	case DEAD:
 		delete this;
 		break;
 	default:
-		state=IDLE;
+		state = IDLE;
 		break;
 	}
 }
+
+ActorStates Actor::updateIdle(){
+	return WANDERING;
+}
+ActorStates Actor::updateWandering(){
+	return WANDERING;
+}
+ActorStates Actor::updateHunting(){
+	return HUNTING;
+}
+ActorStates Actor::updateRunning(){
+	return RUNNING;
+}
+ActorStates Actor::updateJumping(){
+	return JUMPING;
+}
+ActorStates Actor::updateFalling(){
+	return FALLING;
+}
+ActorStates Actor::updateAttacking(){
+	return ATTACKING;
+}
+ActorStates Actor::updateAttackingFar(){
+	return ATTACKINGFAR;
+}
+ActorStates Actor::updateStunned(){
+	return STUNNED;
+}
+ActorStates Actor::updateDying(){
+	return DYING;
+}
+
 } /* namespace enDJIN */

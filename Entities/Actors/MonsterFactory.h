@@ -7,14 +7,15 @@
 
 #ifndef MONSTERFACTORY_H_
 #define MONSTERFACTORY_H_
-#include "../Engine/Types.h"
 #include "Monster.h"
 #include <unordered_map>
 #include <string>
+#include <json/json.h>
+
 namespace enDJIN {
 
 class MonsterFactory {
-	unordered_map<std::string, enDJIN::Monster> mapOfMonsterTemplates;
+	std::unordered_map<std::string, enDJIN::Monster> mapOfMonsterTemplates;
 public:
 	MonsterFactory(Json::Value *JV);
 	virtual ~MonsterFactory();
