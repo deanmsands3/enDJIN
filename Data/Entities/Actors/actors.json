@@ -1,0 +1,20 @@
+{
+	"_comment":"Actors",	
+	"player": {
+		"folder": "Player",
+		"file":"player.json"		
+    },
+    "goblin": {
+		"folder": "Player",
+		"file":"player.json"		
+	},
+    "willowarlock": {
+		"folder": "WilloWarlock",
+		"file":"willowarlock.json"		
+    },
+    "tankbot": {
+		"folder": "TankBot",
+		"file":"tankbot.json"		
+	}
+}
+

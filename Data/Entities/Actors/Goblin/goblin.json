@@ -1,0 +1,24 @@
+{
+	"assets": {
+        "folder": "Goblin",
+        "idle": {
+            "sprite": "idle.png"
+        },
+        "walk": {
+            "sprite": "walk.png",
+            "sound": "footsteps.wav"
+        },
+        "stun": {
+            "sprite": "stun.png",
+            "sound": "ack.wav"
+        },
+        "melee": {
+            "sprite": "stab.png",
+            "sound": "stab.wav"
+        },
+        "death": {
+            "sprite": "death.png",
+            "sound": "death.wav"
+        }
+	}
+}

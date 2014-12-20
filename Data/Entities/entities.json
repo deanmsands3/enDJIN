@@ -1,0 +1,11 @@
+{
+    "_comment":"Entities JSON",
+	"actors":{
+			"folder":"Actors",
+			"file":"actors.json"
+	},
+	"static":{
+		"folder":"Statics",
+		"file":"statics.json"
+	}	
+}

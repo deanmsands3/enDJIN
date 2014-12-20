@@ -1,0 +1,23 @@
+{
+    "assets": {
+        "idle": {
+            "sprite": "idle.png"
+        },
+        "walk": {
+            "sprite": "walk.png",
+            "sound": "footsteps.wav"
+        },
+        "stun": {
+            "sprite": "stun.png",
+            "sound": "ack.wav"
+        },
+        "range": {
+        	"sprite":  "range.png",
+    		"sound":  "range.wav"
+        },
+        "death": {
+            "sprite": "death.png",
+            "sound": "death.wav"
+        }
+    }
+}

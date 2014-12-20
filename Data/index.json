@@ -1,7 +1,7 @@
 {
     "_comment":"Index JSON",
-	"config":"config.json",
-	"gamescreens":"gamescreens.json",
-	"actors":"actors.json"
+	"config":{"folder":"Config","file":"config.json"},
+	"gamescreens":{"folder":"GameScreens","file":"gamescreens.json"},
+	"entities":{"folder":"entities","file":"entities.json"}
 }
 

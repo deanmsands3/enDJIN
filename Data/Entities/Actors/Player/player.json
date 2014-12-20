@@ -1,0 +1,32 @@
+{
+    "_comment":"Statics JSON",
+    "assets": {
+        "idle": {
+            "sprite": "idle.png"
+        },
+        "walk": {
+            "sprite": "walk.png",
+            "sound": "footsteps.wav"
+        },
+        "stun": {
+            "sprite": "stun.png",
+            "sound": "stun.wav"
+        },
+        "melee": {
+            "sprite": "melee.png",
+            "sound": "melee.wav"
+        },
+        "range": {
+        	"sprite":  "range.png",
+    		"sound":  "range.wav"
+        },
+        "ultimate": {
+        	"sprite":  "ultimate.png",
+    		"sound":  "ultimate.wav"
+        },
+        "death":{
+        	"sprite":  "death.png",
+    		"sound":  "death.wav"
+        }
+    }
+}
