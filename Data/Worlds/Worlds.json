@@ -1,0 +1,18 @@
+{
+	"World1":{
+		"folder":"World1",
+		"file":"world1.json"
+	},	
+	"World2":{
+		"folder":"World2",
+		"file":"world2.json"
+	},	
+	"World3":{
+		"folder":"World3",
+		"file":"world3.json"
+	},	
+	"World4":{
+		"folder":"World4",
+		"file":"world4.json"
+	}	
+}

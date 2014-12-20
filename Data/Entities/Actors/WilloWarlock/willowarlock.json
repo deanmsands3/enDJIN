@@ -1,6 +1,5 @@
 {
     "assets": {
-        "folder": "WilloWarlock",
         "idle": {
             "sprite": "idle.png"
         },

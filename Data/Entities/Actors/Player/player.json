@@ -1,5 +1,5 @@
 {
-    "_comment":"Statics JSON",
+    "_comment":"Player JSON",
     "assets": {
         "idle": {
             "sprite": "idle.png"

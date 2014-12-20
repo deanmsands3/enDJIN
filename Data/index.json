@@ -1,7 +1,8 @@
 {
     "_comment":"Index JSON",
 	"config":{"folder":"Config","file":"config.json"},
+	"entities":{"folder":"Entities","file":"entities.json"},
 	"gamescreens":{"folder":"GameScreens","file":"gamescreens.json"},
-	"entities":{"folder":"entities","file":"entities.json"}
+	"tiles":{"folder":"Tiles","file":"tiles.json"},
+	"worlds":{"folder":"Worlds","file":"worlds.json"}
 }
-

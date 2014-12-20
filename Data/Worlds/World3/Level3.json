@@ -1,0 +1,6 @@
+{
+	"_comment":"Level3",	
+	"entrance":{"x":10,"y":10},	
+	"exit":{"x":100,"y":10},
+	"tiledata":""
+}
