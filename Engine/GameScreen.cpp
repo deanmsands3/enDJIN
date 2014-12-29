@@ -18,7 +18,10 @@ namespace enDJIN{
 	}
 
 	GameScreen::~GameScreen() {
-		// TODO Auto-generated destructor stub
+		delete entityMap;
+		delete eventMap;
+		delete actionEffectMap;
+		delete jData;
 	}
 	GameScreen *GameScreen::updateGameScreen(){
 		Show();
