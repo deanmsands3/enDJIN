@@ -1,0 +1,3 @@
+#Utility Objects
+UTIL_OBJS = \
+	$(UTIL_FOLDER)FileName.o

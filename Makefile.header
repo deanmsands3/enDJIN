@@ -2,11 +2,12 @@
 #Folder defines
 ENGINE_FOLDER = Engine/
 ENTITY_FOLDER = Entities/
-
+UTIL_FOLDER   = Util/
 #Include Makefiles
 include $(ENGINE_FOLDER)Makefile.engine
 include $(ENTITY_FOLDER)Makefile.entities
-OBJS =	$(ENGINE_OBJS) $(ENTITY_OBJS) enDJIN.o
+include $(UTIL_FOLDER)Makefile.util
+OBJS =	$(UTIL_OBJS) $(ENGINE_OBJS) $(ENTITY_OBJS) enDJIN.o
 
 #Makefile Hacks
 
@@ -17,4 +18,5 @@ print-%:
 #Banner Macro
 banner-%:
 	@echo '$* $(ENGINE_NAME)'
+	@echo 'for $(_BUILD_PLATFORM)'
 
