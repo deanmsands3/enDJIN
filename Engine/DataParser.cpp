@@ -30,7 +30,7 @@ DataParser::DataParser(const std::string &jsonDocument) {
 	delete jsonReader;
 }
 
-Json::Value *_parseFile(Json::Reader *jsonReader, std::string pathName){
+Json::Value *DataParser::_parseFile(Json::Reader *jsonReader, std::string pathName){
 	Json::Value *target=new Json::Value();
 	bool greatSuccess=jsonReader->parse(pathName,*target, true);
 	if(!greatSuccess){
@@ -41,7 +41,7 @@ Json::Value *_parseFile(Json::Reader *jsonReader, std::string pathName){
 	return target;
 }
 
-Json::Value *_parse(Json::Reader *jsonReader, boost::filesystem::path pathName){
+Json::Value *DataParser::_parse(Json::Reader *jsonReader, boost::filesystem::path pathName){
 	return _parseFile(jsonReader, pathName.string());
 }
 
@@ -66,6 +66,10 @@ Json::Value *DataParser::getActors(){
 
 const std::string& DataParser::getDataFolder() {
 	return DataParser::_dataFolder.string();
+}
+
+void DataParser::setDataFolder(const char* dataFolder) {
+	DataParser::_dataFolder = dataFolder;
 }
 
 void DataParser::setDataFolder(const std::string& dataFolder) {

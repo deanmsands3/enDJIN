@@ -35,9 +35,9 @@ public:
 	Json::Value *getActors();
 	virtual ~DataParser();
 	static const std::string& getDataFolder();
+	void static setDataFolder(const char *dataFolder);
 	void static setDataFolder(const std::string& dataFolder);
-	void static setDataFolder(const char* dataFolder);
-	void static setDataFolder(const boost::filesystem::path& folderPath);
+	void static setDataFolder(const boost::filesystem::path& dataPath);
 };
 
 } /* namespace enDJIN */

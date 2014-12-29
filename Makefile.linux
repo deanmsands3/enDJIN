@@ -3,7 +3,7 @@ INCLUDES = -I /usr/include/python2.7 -I /usr/include/jsoncpp
 TARGET = enDJIN
 SFML_LIBS= -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui
 UTIL_LIBS= -ljsoncpp -lssl
-BOOST_LIBS= -lboost_filesystem
+BOOST_LIBS= -lboost_filesystem -lboost_system
 #Libraries to be linked in.
 LIBS =  $(SFML_LIBS) $(UTIL_LIBS) $(BOOST_LIBS)
 
