@@ -8,6 +8,7 @@
 #ifndef ENGINE_DATAPARSER_H_
 #define ENGINE_DATAPARSER_H_
 #include "../Util/Types.h"
+#include <boost/filesystem.hpp>
 #include <array>
 #include <memory>
 #include <cstdlib>
@@ -23,8 +24,10 @@ class DataParser {
 	Json::Value *_jvConfig;
 	Json::Value *_jvGameScreens;
 	Json::Value *_jvActors;
+	Json::Value *_parse(Json::Reader *jsonReader, boost::filesystem::path pathName);
 	Json::Value *_parse(Json::Reader *jsonReader, std::string fileName);
-	static std::string _dataFolder;
+	Json::Value *_parseFile(Json::Reader *jsonReader, std::string fileName);
+	static boost::filesystem::path _dataFolder;
 public:
 	DataParser(const std::string &jsonDocument);
 	Json::Value *getConfig();
@@ -34,6 +37,7 @@ public:
 	static const std::string& getDataFolder();
 	void static setDataFolder(const std::string& dataFolder);
 	void static setDataFolder(const char* dataFolder);
+	void static setDataFolder(const boost::filesystem::path& folderPath);
 };
 
 } /* namespace enDJIN */

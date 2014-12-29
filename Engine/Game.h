@@ -8,6 +8,7 @@
 #ifndef GAME_H_
 #define GAME_H_
 #include "../Util/Types.h"
+#include <boost/filesystem.hpp>
 #include <SFGUI/SFGUI.hpp>
 #include <SFML/Graphics.hpp>
 #include <Thor/Particles/ParticleSystem.hpp>
