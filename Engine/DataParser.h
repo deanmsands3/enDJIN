@@ -16,6 +16,7 @@
 #include <cstring>
 #include <json/json.h>
 #include <iostream>
+#include <fstream>
 #include <Python.h>
 namespace enDJIN {
 
@@ -23,9 +24,11 @@ class DataParser {
 	Json::Value *_jvIndex;
 	Json::Value *_jvConfig;
 	Json::Value *_jvGameScreens;
-	Json::Value *_jvActors;
-	Json::Value *_parse(Json::Reader *jsonReader, boost::filesystem::path pathName);
-	Json::Value *_parse(Json::Reader *jsonReader, std::string fileName);
+	Json::Value *_jvEntities;
+	Json::Value *_jvTiles;
+	Json::Value *_jvWorlds;
+	Json::Value *_parsePath(Json::Reader *jsonReader, boost::filesystem::path pathName);
+	Json::Value *_parseIndex(Json::Reader *jsonReader, std::string indexName);
 	Json::Value *_parseFile(Json::Reader *jsonReader, std::string fileName);
 	static boost::filesystem::path _dataFolder;
 public:

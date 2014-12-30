@@ -1,0 +1,31 @@
+{
+	"_comment":"Tiles JSON",
+	"sprites":{
+		"blank":{
+			file:"blank.png",
+			"tiles":{
+				"blank":{0,0,128,128}
+			}
+		},
+		"bluesky":{
+			file:"bluesky.png",
+			"tiles":{
+				"bluesky1":{0,0,128,128},
+				"bluesky2":{128,0,128,128},
+				"bluesky3":{256,0,128,128},
+				"bluesky4":{384,0,128,128},
+				"bluesky5":{512,0,128,128},
+				"bluesky6":{640,0,128,128}
+			}
+		},
+		"blocktile":{
+			file:"BlockTile.png",
+			"tiles":{
+				"blocktile1":{0,0,128,128},
+				"blocktile2":{128,0,128,128},
+				"blocktile3":{0,128,128,128},
+				"blocktile4":{128,128,128,128}
+			}
+		}
+	}
+}

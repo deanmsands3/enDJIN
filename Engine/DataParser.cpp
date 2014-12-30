@@ -10,45 +10,53 @@
 namespace enDJIN {
 
 DataParser::DataParser(const std::string &jsonDocument) {
-	std::string indexJSON=(_dataFolder / "index.json").string();
+	//	std::cout<<boost::filesystem::current_path()<<std::endl;
+
+	//std::string indexJSON=(DataParser::_dataFolder / "index.json").string();
+	std::string indexJSON="index.json";
 	std::string configJSON;
 	std::string gameScreensJSON;
 	std::string actorsJSON;
 	Json::Reader *jsonReader=new Json::Reader();
-	_jvIndex=_parse(jsonReader, indexJSON);
-	std::string configFolder=(*_jvIndex)["config"]["Folder"].asString();
-	std::string configFile=(*_jvIndex)["config"]["File"].asString();
-	configJSON=(_dataFolder / configFolder / configFile).string();
-	_jvConfig=_parse(jsonReader, configJSON);
-
-	std::string gameScreensFolder=(*_jvIndex)["gamescreens"]["Folder"].asString();
-	std::string gameScreensFile=(*_jvIndex)["gamescreens"]["File"].asString();
-	gameScreensJSON=(_dataFolder / gameScreensFolder / gameScreensFile).string();
-
-	_jvGameScreens=_parse(jsonReader, gameScreensJSON);
-	_jvActors=_parse(jsonReader, (*_jvIndex)["actors"].asString());
+	_jvIndex=_parseFile(jsonReader, indexJSON);
+	_jvConfig=_parseIndex(jsonReader, "config");
+	_jvGameScreens=_parseIndex(jsonReader, "gamescreens");
+	_jvEntities=_parseIndex(jsonReader, "entities");
+	_jvTiles=_parseIndex(jsonReader, "tiles");
+	_jvWorlds=_parseIndex(jsonReader, "worlds");
 	delete jsonReader;
 }
 
 Json::Value *DataParser::_parseFile(Json::Reader *jsonReader, std::string pathName){
 	Json::Value *target=new Json::Value();
-	bool greatSuccess=jsonReader->parse(pathName,*target, true);
+	bool greatSuccess=true;
+	try{
+		std::ifstream jsonFile(pathName);
+		jsonFile>>(*target);
+		jsonFile.close();
+	}catch(std::exception &e){
+		std::cout<<"There was an error:"<<std::endl;
+		greatSuccess=false;
+	}
 	if(!greatSuccess){
-		delete target;
 		std::cerr<<"Error loading "<<pathName<<std::endl;
 		std::exit(-1);
 	}
+
+
 	return target;
 }
 
-Json::Value *DataParser::_parse(Json::Reader *jsonReader, boost::filesystem::path pathName){
+Json::Value *DataParser::_parsePath(Json::Reader *jsonReader, boost::filesystem::path pathName){
 	return _parseFile(jsonReader, pathName.string());
 }
 
-Json::Value *DataParser::_parse(Json::Reader *jsonReader, std::string indexName){
+
+Json::Value *DataParser::_parseIndex(Json::Reader *jsonReader, std::string indexName){
+	std::cout<<"Parsing:"<<indexName<<std::endl;
 	if(_jvIndex==NULL){return NULL;}
-	std::string configFolder=(*_jvIndex)[indexName]["Folder"].asString();
-	std::string configFile=(*_jvIndex)[indexName]["File"].asString();
+	std::string configFolder=(*_jvIndex)[indexName]["folder"].asString();
+	std::string configFile=(*_jvIndex)[indexName]["file"].asString();
 	std::string configJSON=(_dataFolder / configFolder / configFile).string();
 	return _parseFile(jsonReader, configJSON);
 }
@@ -61,7 +69,7 @@ Json::Value *DataParser::getGameScreens(){
 }
 
 Json::Value *DataParser::getActors(){
-	return _jvActors;
+	return _jvEntities;
 }
 
 const std::string& DataParser::getDataFolder() {
@@ -69,19 +77,22 @@ const std::string& DataParser::getDataFolder() {
 }
 
 void DataParser::setDataFolder(const char* dataFolder) {
-	DataParser::_dataFolder = dataFolder;
+	boost::filesystem::current_path(dataFolder);
+	DataParser::_dataFolder = boost::filesystem::current_path();
 }
 
 void DataParser::setDataFolder(const std::string& dataFolder) {
-	DataParser::_dataFolder = dataFolder;
+	boost::filesystem::current_path(dataFolder);
+	DataParser::_dataFolder = boost::filesystem::current_path();
 }
 
 void DataParser::setDataFolder(const boost::filesystem::path& folderPath) {
-	DataParser::_dataFolder = folderPath;
+	boost::filesystem::current_path(folderPath);
+	DataParser::_dataFolder = boost::filesystem::current_path();
 }
 
 DataParser::~DataParser() {
-	delete _jvActors;
+	delete _jvEntities;
 	delete _jvGameScreens;
 	delete _jvConfig;
 	delete _jvIndex;
