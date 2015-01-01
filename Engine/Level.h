@@ -7,10 +7,13 @@
 
 #ifndef LEVEL_H_
 #define LEVEL_H_
-
+#include "Types.h"
+#include <SFML/Graphics.hpp>
+#include <unordered_map>
 namespace enDJIN {
 
 class Level {
+std::unordered_map<unsigned int, sf::Sprite*> spriteMap;
 public:
 	Level();
 	virtual ~Level();
