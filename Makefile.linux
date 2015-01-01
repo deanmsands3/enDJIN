@@ -1,9 +1,11 @@
 #Linux
 INCLUDES = -I /usr/include/python2.7 -I /usr/include/jsoncpp
 TARGET = enDJIN
-
+SFML_LIBS= -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui
+UTIL_LIBS= -ljsoncpp -lssl
+BOOST_LIBS= -lboost_filesystem -lboost_system
 #Libraries to be linked in.
-LIBS = -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui -ljsoncpp -lssl
+LIBS =  $(SFML_LIBS) $(UTIL_LIBS) $(BOOST_LIBS)
 
 #C++ Flags for compiling
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -std=c++11 $(INCLUDES)

@@ -7,6 +7,7 @@
 
 #ifndef ENTITY_H_
 #define ENTITY_H_
+#include "../Util/Types.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 namespace enDJIN {

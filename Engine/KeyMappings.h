@@ -7,7 +7,7 @@
 
 #ifndef KEYMAPPINGS_H_
 #define KEYMAPPINGS_H_
-#include "Types.h"
+#include "../Util/Types.h"
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <unordered_map>

@@ -7,7 +7,7 @@
 
 #ifndef GAMESCREEN_H_
 #define GAMESCREEN_H_
-#include "Types.h"
+#include "../Util/Types.h"
 #include <SFML/Graphics.hpp>
 #include <map>
 #include <unordered_map>

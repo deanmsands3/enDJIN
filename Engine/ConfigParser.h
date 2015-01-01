@@ -9,7 +9,7 @@
 #define CONFIGPARSER_H_
 #define SCREEN_WIDTH	1600
 #define SCREEN_HEIGHT	900
-#include "Types.h"
+#include "../Util/Types.h"
 #include <array>
 #include <memory>
 #include <cstdlib>

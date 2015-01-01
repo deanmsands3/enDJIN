@@ -7,7 +7,7 @@
 
 #ifndef LEVEL_H_
 #define LEVEL_H_
-#include "Types.h"
+#include "../Util/Types.h"
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 namespace enDJIN {

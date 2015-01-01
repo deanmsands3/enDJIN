@@ -22,7 +22,7 @@ Game::~Game() {
 }
 
 void Game::setup(const std::string &index_json){
-	DataParser::setDataFolder(std::string("./Data"));
+	DataParser::setDataFolder("Data");
 	dataparser=new DataParser(index_json);
 	// Initialize the Config Parser
 	config = new ConfigParser(dataparser->getConfig());
