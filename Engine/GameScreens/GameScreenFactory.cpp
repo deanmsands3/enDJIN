@@ -6,6 +6,7 @@
  */
 
 #include "GameScreenFactory.h"
+#include "Util/Log.h"
 #include <iostream>
 namespace enDJIN {
 
@@ -13,6 +14,7 @@ GameScreenFactory::GameScreenFactory(Json::Value *JV):jData(JV) {
 	gameScreenCtorMap["game"]=&GameScreen::newGameScreen;
 	gameScreenCtorMap["splashscreen"]=&SplashScreen::newGameScreen;
 	gameScreenCtorMap["menuscreen"]=&MenuScreen::newGameScreen;
+	FILE_LOG(logINFO)<<"GSF Constructed"<<std::endl;
 }
 
 GameScreenFactory::~GameScreenFactory() {
@@ -24,11 +26,12 @@ GameScreen* GameScreenFactory::getGameScreen(std::string name, sf::RenderWindow 
 		Json::Value *gameScreenJSON=new Json::Value((*jData)[name]);
 		std::string gameScreenType;
 		gameScreenType=(*gameScreenJSON)["type"].asString();
+		FILE_LOG(logINFO)<<"GSF:getGameScreen:"<<"Name:"<<name<<":"<<gameScreenType<<std::endl;
 		GameScreenCtor thisGameScreenCtor=gameScreenCtorMap[gameScreenType];
 		return thisGameScreenCtor(window, keyMap, gameScreenJSON);
 
 	}catch(std::exception &e){
-		std::cerr<<e.what();
+		FILE_LOG(logERROR)<<e.what();
 		std::exit(-1);
 	}
 }

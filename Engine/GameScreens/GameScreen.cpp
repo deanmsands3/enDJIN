@@ -6,13 +6,12 @@
  */
 
 #include "GameScreen.h"
-
+#include "Util/Log.h"
 #include <iostream>
 namespace enDJIN{
 	GameScreen::GameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV) {
 		renderWin=window;
 		jData=JV;
-		std::cout<<*jData<<std::endl;
 		// TODO Auto-generated constructor stub
 		eventMap = new std::map<sf::Event,voidFuncPtr>();
 		entityMap = new std::map<uint64_t,Entity*>();
@@ -27,11 +26,16 @@ namespace enDJIN{
 		delete jData;
 	}
 	GameScreen *GameScreen::updateGameScreen(){
-		this->Show();
-		this->processEntities();
-		return this->processEvents();
+		Show();
+		processEntities();
+		return processEvents();
 	}
 	void GameScreen::Show(){
+		static bool thisFlag=false;
+		if(thisFlag==false){
+			thisFlag=true;
+			FILE_LOG(logINFO)<<"Game shown"<<std::endl;
+		}
 		// Rendering.
 		renderWin->clear();
 		renderWin->display();
@@ -90,6 +94,14 @@ namespace enDJIN{
 	}
 	GameScreen* GameScreen::newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV){
 		return new GameScreen(window, keyMap, JV);
+	}
+	boost::filesystem::path GameScreen::_dataPath;
+
+	const boost::filesystem::path& GameScreen::getDataPath() {
+		return _dataPath;
+	}
+	void GameScreen::setDataPath(const boost::filesystem::path& dataPath) {
+		_dataPath = dataPath;
 	}
 }	//Namespace enDJIN
 

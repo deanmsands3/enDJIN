@@ -33,7 +33,11 @@ void Game::setup(const std::string &index_json){
 			"enDJIN"
 			);
 	//Determine which gamestate is active
+	GameScreen::setDataPath("GameScreens");
+//	GameScreen::setDataPath();
+
 	gsf=GameScreenFactory::getInstance(dataparser->getJSONRoot("gamescreens"));
+
 	//Load gamestate
 	currentGS=gsf->getInitialGameScreen(renderWin,keyMap);
 	delete keyMap;

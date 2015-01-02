@@ -1,0 +1,9 @@
+Update the README
+Move to private repository or at least move the assets to a private repository.
+Possibly work out multi-sprite player/monster characters.
+Make bump-maps for sprites.
+Add bump-mapping.
+Create asset manager.
+Create inventory system.
+Create menu system.
+Put all this on Trello.

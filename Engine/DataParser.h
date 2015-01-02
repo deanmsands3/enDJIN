@@ -7,7 +7,8 @@
 
 #ifndef ENGINE_DATAPARSER_H_
 #define ENGINE_DATAPARSER_H_
-#include "../Util/Types.h"
+#include "Util/Types.h"
+#include "Util/Log.h"
 #include <unordered_map>
 #include <boost/filesystem.hpp>
 #include <array>

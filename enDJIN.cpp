@@ -18,10 +18,12 @@ int main(int argc, char *argv[]) {
 		if(pLogFile==NULL) throw std::runtime_error("Could not create log file.");
 		Output2FILE::Stream() = pLogFile;
 		FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
+		FILE_LOG(logINFO)<<"Logger started"<<std::endl;
 	}catch(std::exception &e){
 		std::cerr<<e.what()<<std::endl;
 		return FAILURE;
 	}
+
 	//Run the game
 	try{
 		enDJIN::Game *theGame = new enDJIN::Game(indexFile);

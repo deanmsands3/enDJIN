@@ -14,10 +14,10 @@ DataParser::DataParser(const std::string &jsonDocument) {
 	//Parse JSON index and store in map
 	try{
 		_jvIndex=_parseFile(jsonDocument);	//Parse in the main Index File
-		std::cout<<"Index Parsed"<<std::endl;
+		FILE_LOG(logINFO)<<"Index Parsed"<<std::endl;
 		//Loop through index and parse the sub-indexes
 		for(auto rootName:_jvIndex->getMemberNames()){
-			std::cout<<"Parsing "<<rootName<<std::endl;
+			FILE_LOG(logINFO)<<"Parsing "<<rootName<<std::endl;
 			if(rootName[0]=='_'){continue;}	//Ignore comments
 			this->jsonMap[rootName]=this->_parseIndex(rootName);
 		}
@@ -33,11 +33,11 @@ Json::Value *DataParser::_parseFile(std::string pathName){
 	try{
 		std::ifstream jsonFile(pathName);
 		jsonFile>>(*target);
-		std::cout<<"Parsed"<<std::endl;
+		FILE_LOG(logINFO)<<"Parsed"<<pathName<<std::endl;
 		jsonFile.close();
-		std::cout<<"Closed"<<std::endl;
+		FILE_LOG(logINFO)<<"Closed"<<std::endl;
 	}catch(std::exception &e){
-		std::cerr<<"DataParser::_parseFile:Error loading "<<pathName<<std::endl<<e.what()<<std::endl;
+		FILE_LOG(logERROR)<<"DataParser::_parseFile:Error loading "<<pathName<<std::endl<<e.what()<<std::endl;
 		std::exit(-1);
 	}
 	return target;
@@ -49,7 +49,7 @@ Json::Value *DataParser::_parsePath(boost::filesystem::path pathName){
 
 
 Json::Value *DataParser::_parseIndex(std::string indexName){
-	std::cout<<"Parsing:"<<indexName<<std::endl;
+	FILE_LOG(logINFO)<<"Parsing "<<indexName<<std::endl;
 	std::string configJSON;
 	if(_jvIndex==NULL){return NULL;}
 	try{
@@ -57,7 +57,7 @@ Json::Value *DataParser::_parseIndex(std::string indexName){
 		std::string configFile=(*_jvIndex)[indexName]["file"].asString();
 		configJSON=(_dataFolder / configFolder / configFile).string();
 	}catch(std::exception &e){
-		std::cerr<<"Error loading "<<indexName<<std::endl<<e.what()<<std::endl;
+		FILE_LOG(logERROR)<<"Error loading "<<indexName<<std::endl<<e.what()<<std::endl;
 		std::exit(-1);
 	}
 	return _parseFile(configJSON);

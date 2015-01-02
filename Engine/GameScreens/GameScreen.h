@@ -8,6 +8,7 @@
 #ifndef GAMESCREEN_H_
 #define GAMESCREEN_H_
 #include "Util/Types.h"
+#include <boost/filesystem.hpp>
 #include <SFML/Graphics.hpp>
 #include <map>
 #include <unordered_map>
@@ -17,6 +18,7 @@
 namespace enDJIN{
 	class GameScreen {
 	protected:
+		static boost::filesystem::path _dataPath;
 		sf::RenderWindow *renderWin;
 		std::map<sf::Event, voidFuncPtr> *eventMap;
 		std::map<uint64_t, Entity*> *entityMap;
@@ -37,7 +39,10 @@ namespace enDJIN{
 		std::unordered_map<std::string, voidFuncPtr>* getActionEffectMap();
 		std::map<uint64_t, Entity*>* getEntityMap();
 		std::map<sf::Event, voidFuncPtr>* getEventMap();
-	};//GameScreen
+		static const boost::filesystem::path& getDataPath();
+		static void setDataPath(const boost::filesystem::path &dataPath);
+};
+//GameScreen
 	typedef GameScreen* (*GameScreenCtor)(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
 
 };//enDJIN
