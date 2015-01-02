@@ -28,9 +28,9 @@ namespace enDJIN{
 		static GameScreen* newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
 		GameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
 		virtual ~GameScreen();
-		GameScreen *updateGameScreen();
-		GameScreen *processEntities();
-		GameScreen *processEvents();
+		virtual GameScreen *updateGameScreen();
+		virtual GameScreen *processEntities();
+		virtual GameScreen *processEvents();
 		virtual void Show();
 		const sf::RenderWindow*& getRenderWin() const;
 		void setRenderWin(const sf::RenderWindow*& renderWin);

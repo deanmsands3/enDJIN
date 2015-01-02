@@ -30,14 +30,14 @@ SplashScreen::SplashScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::
 SplashScreen::~SplashScreen() {
 	// TODO Auto-generated destructor stub
 }
-void SplashScreen::Show(sf::RenderWindow& window){
+void SplashScreen::Show(){
 	static bool thisFlag=false;
 	if(thisFlag==false){
 		thisFlag=true;
 		FILE_LOG(logINFO)<<"Splash shown"<<std::endl;
 	}
-	window.draw(_sprite);
-	window.display();
+	renderWin->draw(_sprite);
+	renderWin->display();
 }
 GameScreen* SplashScreen::newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV){
 	return new SplashScreen(window, keyMap, JV);

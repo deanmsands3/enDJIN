@@ -19,7 +19,7 @@ class SplashScreen: public GameScreen {
 public:
 	SplashScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
 	virtual ~SplashScreen();
-	virtual void Show(sf::RenderWindow& window);
+	virtual void Show();
 	static GameScreen* newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
 };
 
