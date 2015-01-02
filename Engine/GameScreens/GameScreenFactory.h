@@ -7,15 +7,22 @@
 
 #ifndef GAMESCREENFACTORY_H_
 #define GAMESCREENFACTORY_H_
-#include "ConfigParser.h"
+#include "Engine/ConfigParser.h"
 #include "GameScreen.h"
+#include "SplashScreen.h"
+#include "MenuScreen.h"
 #include <string>
+#include <unordered_map>
 namespace enDJIN {
 
 class GameScreenFactory {
 	Json::Value *jData;
-public:
 	GameScreenFactory(Json::Value *JV);
+	std::unordered_map<std::string, GameScreenCtor>gameScreenCtorMap;
+	static GameScreenFactory *thisInstance;
+public:
+	static GameScreenFactory *getInstance(Json::Value *JV);
+	static GameScreenFactory *getInstance();
 	virtual ~GameScreenFactory();
 	GameScreen *getGameScreen(std::string name, sf::RenderWindow *window, KeyMappings *keyMap);
 	GameScreen *getInitialGameScreen(sf::RenderWindow *window, KeyMappings *keyMap);

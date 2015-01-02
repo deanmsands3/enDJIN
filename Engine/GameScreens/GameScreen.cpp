@@ -6,10 +6,13 @@
  */
 
 #include "GameScreen.h"
+
+#include <iostream>
 namespace enDJIN{
 	GameScreen::GameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV) {
 		renderWin=window;
 		jData=JV;
+		std::cout<<*jData<<std::endl;
 		// TODO Auto-generated constructor stub
 		eventMap = new std::map<sf::Event,voidFuncPtr>();
 		entityMap = new std::map<uint64_t,Entity*>();
@@ -24,12 +27,11 @@ namespace enDJIN{
 		delete jData;
 	}
 	GameScreen *GameScreen::updateGameScreen(){
-		Show();
-		processEntities();
-		return processEvents();;
+		this->Show();
+		this->processEntities();
+		return this->processEvents();
 	}
 	void GameScreen::Show(){
-
 		// Rendering.
 		renderWin->clear();
 		renderWin->display();
@@ -86,6 +88,8 @@ namespace enDJIN{
 	std::map<sf::Event, voidFuncPtr>* GameScreen::getEventMap(){
 		return this->eventMap;
 	}
-
+	GameScreen* GameScreen::newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV){
+		return new GameScreen(window, keyMap, JV);
+	}
 }	//Namespace enDJIN
 

@@ -7,7 +7,9 @@
 
 #ifndef GAME_H_
 #define GAME_H_
-#include "../Util/Types.h"
+#include "Util/Types.h"
+#include "Util/Log.h"
+#include <stdexcept>
 #include <boost/filesystem.hpp>
 #include <SFGUI/SFGUI.hpp>
 #include <SFML/Graphics.hpp>
@@ -17,9 +19,8 @@
 #include <Thor/Math/Random.hpp>
 #include <Thor/Time/CallbackTimer.hpp>
 #include "ConfigParser.h"
-#include "GameScreenFactory.h"
-#include "GameScreen.h"
 #include "DataParser.h"
+#include "GameScreens/GameScreenFactory.h"
 
 namespace enDJIN{
 	class Game {

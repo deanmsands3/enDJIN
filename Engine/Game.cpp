@@ -25,7 +25,7 @@ void Game::setup(const std::string &index_json){
 	DataParser::setDataFolder("Data");
 	dataparser=new DataParser(index_json);
 	// Initialize the Config Parser
-	config = new ConfigParser(dataparser->getConfig());
+	config = new ConfigParser(dataparser->getJSONRoot("config"));
 	KeyMappings *keyMap=config->generateKeyMap();
 	// Create SFML's window.
 	renderWin=new sf::RenderWindow(
@@ -33,13 +33,12 @@ void Game::setup(const std::string &index_json){
 			"enDJIN"
 			);
 	//Determine which gamestate is active
-	gsf=new GameScreenFactory(dataparser->getGameScreens());
+	gsf=GameScreenFactory::getInstance(dataparser->getJSONRoot("gamescreens"));
 	//Load gamestate
 	currentGS=gsf->getInitialGameScreen(renderWin,keyMap);
 	delete keyMap;
 }
 void Game::loop(){
-
 	while((currentGS=currentGS->updateGameScreen())){}
 }
 

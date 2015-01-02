@@ -7,13 +7,13 @@
 
 #ifndef GAMESCREEN_H_
 #define GAMESCREEN_H_
-#include "../Util/Types.h"
+#include "Util/Types.h"
 #include <SFML/Graphics.hpp>
 #include <map>
 #include <unordered_map>
-#include "ConfigParser.h"
-#include "KeyMappings.h"
-#include "../Entities/Entity.h"
+#include "Engine/ConfigParser.h"
+#include "Engine/KeyMappings.h"
+#include "Entities/Entity.h"
 namespace enDJIN{
 	class GameScreen {
 	protected:
@@ -23,6 +23,7 @@ namespace enDJIN{
 		std::unordered_map<std::string,voidFuncPtr> *actionEffectMap;
 		Json::Value *jData;
 	public:
+		static GameScreen* newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
 		GameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
 		virtual ~GameScreen();
 		GameScreen *updateGameScreen();
@@ -36,7 +37,8 @@ namespace enDJIN{
 		std::unordered_map<std::string, voidFuncPtr>* getActionEffectMap();
 		std::map<uint64_t, Entity*>* getEntityMap();
 		std::map<sf::Event, voidFuncPtr>* getEventMap();
-	};
-//GameScreen
+	};//GameScreen
+	typedef GameScreen* (*GameScreenCtor)(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
+
 };//enDJIN
 #endif /* GAMESCREEN_H_ */

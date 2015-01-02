@@ -1,0 +1,5 @@
+GAMESCREENS_OBJS = \
+	$(GAMESCREENS_FOLDER)GameScreen.o \
+	$(GAMESCREENS_FOLDER)GameScreenFactory.o \
+	$(GAMESCREENS_FOLDER)SplashScreen.o \
+	$(GAMESCREENS_FOLDER)MenuScreen.o

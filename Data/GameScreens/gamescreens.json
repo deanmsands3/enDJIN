@@ -6,7 +6,7 @@
     	"next":"start_menu"
     },
     "start_menu":{
-    	"type":"menu",
+    	"type":"menuscreen",
     	"next":"exit"
     },
     "exit":{

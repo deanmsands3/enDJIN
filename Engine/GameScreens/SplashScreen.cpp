@@ -10,11 +10,10 @@
 namespace enDJIN {
 	SplashScreen::SplashScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV):
 		GameScreen(window, keyMap, JV) {
-
-		Json::Value imageValue;
-		jData->get("splash",imageValue);
+		std::string imageName;
+		imageName=(*jData)["splash"].asString();
 		sf::Texture _texture;
-		if(_texture.loadFromFile(imageValue.asString()) != true)
+		if(_texture.loadFromFile(imageName) != true)
 		{
 			return;
 		}
@@ -31,4 +30,8 @@ namespace enDJIN {
 		window.draw(_sprite);
 		window.display();
 	}
+	GameScreen* SplashScreen::newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV){
+		return new GameScreen(window, keyMap, JV);
+	}
+
 } /* namespace enDJIN */

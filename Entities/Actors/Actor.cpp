@@ -9,8 +9,7 @@
 
 namespace enDJIN {
 
-Actor::Actor(std::string filename):Entity(filename) {
-	// TODO Auto-generated constructor stub
+Actor::Actor(std::string filename):Entity(filename),state(IDLE) {
 
 }
 
@@ -25,9 +24,9 @@ void Actor::setVelocity(sf::Vector2f velocity) {
 	this->velocity = velocity;
 }
 void Actor::update(){
-	sf::Vector2f t=this->getLocation();
-	t.x+=this->velocity.x;
-	t.y+=this->velocity.y;
+	sf::Vector2f t=getLocation();
+	t.x+=velocity.x;
+	t.y+=velocity.y;
 	setLocation(t);
 	switch(state){
 	case IDLE:
@@ -38,16 +37,16 @@ void Actor::update(){
 		break;
 	case HUNTING:
 		state = updateHunting();
-			break;
+		break;
 	case RUNNING:
 		state = updateRunning();
-			break;
+		break;
 	case JUMPING:
 		state = updateJumping();
-			break;
+		break;
 	case FALLING:
 		state = updateFalling();
-			break;
+		break;
 	case ATTACKING:
 		state = updateAttacking();
 		break;

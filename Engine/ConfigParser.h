@@ -16,6 +16,7 @@
 #include <string>
 #include <cstring>
 #include <cmath>
+#include <stdexcept>
 #include <json/json.h>
 #include <Python.h>
 #include "KeyMappings.h"

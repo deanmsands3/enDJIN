@@ -1,5 +1,5 @@
 #We're in Windows. Swell.
-INCLUDES = -I c:/MinGW/include -I c:/Python27/include
+INCLUDES = -I c:/MinGW/include -I c:/Python27/include  -I .
 TARGET =	enDJIN.exe
 
 SFML_LIBS= -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui
