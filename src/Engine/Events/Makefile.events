@@ -1,0 +1,3 @@
+EVENTS_OBJS = \
+	$(EVENTS_FOLDER)Event.o \
+	$(EVENTS_FOLDER)EventHandler.o

@@ -1,6 +1,0 @@
-#Engine Objects
-GAMESCREENS_FOLDER = $(ENGINE_FOLDER)GameScreens/
-include $(GAMESCREENS_FOLDER)Makefile.gamescreens
-
-ENGINE_OBJS = $(ENGINE_FOLDER)DataParser.o $(ENGINE_FOLDER)ConfigParser.o $(ENGINE_FOLDER)Game.o $(ENGINE_FOLDER)KeyMappings.o $(ENGINE_FOLDER)Level.o $(ENGINE_FOLDER)Tile.o $(ENGINE_FOLDER)TileMap.o	$(GAMESCREENS_OBJS)
-	
