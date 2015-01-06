@@ -9,7 +9,7 @@ include $(ENGINE_FOLDER)Makefile.engine
 include $(ENTITY_FOLDER)Makefile.entities
 include $(UTIL_FOLDER)Makefile.util
 include $(RESOURCES_FOLDER)Makefile.resources
-OBJS =	$(UTIL_OBJS) $(ENGINE_OBJS) $(ENTITY_OBJS) $(SRC_FOLDER)enDJIN.o
+OBJS =	$(UTIL_OBJS) $(ENGINE_OBJS) $(ENTITY_OBJS) $(RESOURCES_OBJS) $(SRC_FOLDER)enDJIN.o
 
 #Makefile Hacks
 
