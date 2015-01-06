@@ -7,7 +7,7 @@
 
 #ifndef RESOURCES_RESOURCEMANAGEMENT_H_
 #define RESOURCES_RESOURCEMANAGEMENT_H_
-#include "Repository.h"
+#include "../ResourceManagement/Repository.h"
 
 
 
