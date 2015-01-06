@@ -23,15 +23,18 @@
 
 namespace enDJIN{
 	class Game {
+		static Game *_instance;
 		DataParser *dataparser;
 		ConfigParser *config;
 		sf::RenderWindow *renderWin;
 		GameScreenFactory *gsf;
-		GameScreen *currentGS;
+		GameScreen *currentGameScreen;
 		void setup(const std::string &index_json);
 		void loop();
-	public:
 		Game(const std::string &index_json);
+	public:
+		static const Game* getInstance();
+		static Game* init(const std::string &index_json);
 		virtual ~Game();
 	};
 };

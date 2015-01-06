@@ -15,8 +15,10 @@
 
 #ifdef __cplusplus
 #include <cstdint>
+#include <climits>
 #else
 #include <stdint.h>
+#include <limits.h>
 #endif
 
 #ifndef SUCCESS

@@ -13,6 +13,16 @@ Game::Game(const std::string &index_json) {
 	loop();
 }
 
+const Game* Game::getInstance() {
+	if(Game::_instance==nullptr) throw std::runtime_error("Game Object not initialized!");
+	return (const Game*)Game::_instance;
+}
+
+Game* Game::init(const std::string& index_json) {
+	if(Game::_instance==nullptr){Game::_instance=new Game(index_json);}
+	return Game::_instance;
+}
+
 Game::~Game() {
 	delete gsf;
 	renderWin->close();
@@ -39,11 +49,19 @@ void Game::setup(const std::string &index_json){
 	gsf=GameScreenFactory::getInstance(dataparser->getJSONRoot("gamescreens"));
 
 	//Load gamestate
-	currentGS=gsf->getInitialGameScreen(renderWin,keyMap);
+	currentGameScreen=gsf->getInitialGameScreen(renderWin,keyMap);
 	delete keyMap;
 }
 void Game::loop(){
-	while((currentGS=currentGS->updateGameScreen())){}
+	bool running=true;
+	while(running){
+		while(currentGameScreen->updateGameScreen()){}
+		GameScreen *oldGameScreen=currentGameScreen;
+		currentGameScreen=oldGameScreen->getNextGameScreen();
+		delete oldGameScreen;
+		running =(currentGameScreen!=nullptr);
+	}
 }
 
+Game* Game::_instance=nullptr;
 };

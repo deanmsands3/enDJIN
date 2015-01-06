@@ -24,7 +24,7 @@ GameScreen::~GameScreen() {
 	delete actionEffectMap;
 	delete jData;
 }
-GameScreen *GameScreen::updateGameScreen(){
+bool GameScreen::updateGameScreen(){
 	Show();
 	processEntities();
 	return processEvents();
@@ -34,11 +34,11 @@ void GameScreen::Show() const{
 	renderWin->clear();
 	renderWin->display();
 }
-GameScreen* GameScreen::processEntities() {
+bool GameScreen::processEntities() {
 	for (const auto& thisEntity : *entityMap) {
 		thisEntity.second->update();
 	}
-	return this;
+	return true;
 }
 
 void GameScreen::processWindowEvents(){
@@ -58,11 +58,11 @@ void GameScreen::processWindowEvents(){
 	}
 }
 
-GameScreen* GameScreen::processEvents() {
+bool GameScreen::processEvents() {
 	while(_messagePump.empty()==false){
 
 	}
-	return _nextGameScreen;
+	return _active;
 }
 
 const sf::RenderWindow*& GameScreen::getRenderWin() const {
@@ -109,5 +109,7 @@ GameScreen* GameScreen::getNextGameScreen() {
 void GameScreen::setNextGameScreen(GameScreen* nextGameScreen) {
 	this->_nextGameScreen = nextGameScreen;
 }
+
+
 }	//Namespace enDJIN
 

@@ -3,7 +3,7 @@
 ENGINE_FOLDER = $(SRC_FOLDER)Engine/
 ENTITY_FOLDER = $(SRC_FOLDER)Entities/
 UTIL_FOLDER   = $(SRC_FOLDER)Util/
-RESOURCES_FOLDER = $(SRC_FOLDER)Resources/
+RESOURCES_FOLDER = $(SRC_FOLDER)ResourceManagement/
 #Include Makefiles
 include $(ENGINE_FOLDER)Makefile.engine
 include $(ENTITY_FOLDER)Makefile.entities

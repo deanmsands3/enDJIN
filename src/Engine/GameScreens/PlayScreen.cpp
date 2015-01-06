@@ -24,4 +24,18 @@ PlayScreen::~PlayScreen() {
 GameScreen* PlayScreen::newGameScreen(sf::RenderWindow* window,KeyMappings* keyMap, Json::Value *JV){
 	return new PlayScreen(window, keyMap, JV);
 }
-}; /* namespace enDJIN */
+
+
+void PlayScreen::playerMoves(void* direction) {
+	if(Player::getInstance()==nullptr) throw std::runtime_error("No Player Object.");
+}
+
+void PlayScreen::playerDies(void* dummy) {
+}
+
+void PlayScreen::playerRises(void* dummy) {
+}
+
+}
+;
+/* namespace enDJIN */

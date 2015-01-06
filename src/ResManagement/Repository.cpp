@@ -5,7 +5,7 @@
  *      Author: Dean
  */
 
-#include "../src/Resources/Repository.h"
+#include "../ResourceManagement/Repository.h"
 
 namespace enDJIN {
 

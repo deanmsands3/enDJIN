@@ -166,7 +166,7 @@ typedef struct{	//Included only for completeness
 	Bits8 hilohi;
 	Bits8 hihilo;
 	Bits8 hihihi;
-}Bits64_8;
+}Bits64_8;		//No, I don't know why anyone would ever use this.
 
 typedef struct{
 	Bits16 lolo;

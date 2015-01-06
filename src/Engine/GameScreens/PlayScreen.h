@@ -18,6 +18,10 @@ public:
 	virtual ~PlayScreen();
 	virtual void Show();
 	static GameScreen* newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV);
+
+	void playerMoves(void *direction);
+	void playerDies(void *dummy);
+	void playerRises(void *dummy);
 };
 
 } /* namespace enDJIN */

@@ -16,6 +16,9 @@ typedef void (*voidBooleanFuncPtr)(bool);
 typedef void (*voidUint16FuncPtr)(uint16_t);
 typedef void (*voidUint32FuncPtr)(uint32_t);
 typedef uint16_t (*Uint16Uint16FuncPtr)(uint16_t);
+typedef void (*callBack)(void*);
+
+
 
 
 
