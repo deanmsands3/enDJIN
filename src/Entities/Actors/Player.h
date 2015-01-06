@@ -13,10 +13,14 @@
 namespace enDJIN {
 
 class Player: public Actor {
-public:
-	void update();
+	static Player *_instance;
 	Player(std::string filename);
+public:
+	Player* init(const std::string& filename);
+	void update();
 	virtual ~Player();
+	static Player *getInstance();
+	static void killPlayer(Player* playerToKill);
 };
 
 } /* namespace enDJIN */

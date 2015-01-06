@@ -10,7 +10,7 @@
 namespace enDJIN {
 
 KeyMappings::KeyMappings() {
-	// TODO Auto-generated constructor stub
+	actionEffectMap=new std::unordered_map<std::string,TCallBack>();
 
 }
 
@@ -22,7 +22,7 @@ KeyMappings::~KeyMappings() {
 bool KeyMappings::map_key(sf::Keyboard::Key keyPressed, std::string newEventName){
 	keyActionMap[(unsigned int)keyPressed]=newEventName;
 	try{
-		voidFuncPtr thisFunction=(*actionEffectMap)[newEventName];
+		TCallBack thisFunction=(*actionEffectMap)[newEventName];
 		keyEffectMap[(unsigned int)keyPressed]=thisFunction;
 	}catch(std::exception &e){
 

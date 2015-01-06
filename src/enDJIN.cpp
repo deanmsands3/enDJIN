@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 
 	//Run the game
 	try{
-		enDJIN::Game *theGame = Game::init(indexFile);
+		enDJIN::Game *theGame = enDJIN::Game::init(indexFile);
 		delete theGame;
 	}catch (const std::exception& e)
 	{

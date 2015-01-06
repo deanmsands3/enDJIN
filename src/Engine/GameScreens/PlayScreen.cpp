@@ -31,6 +31,7 @@ void PlayScreen::playerMoves(void* direction) {
 }
 
 void PlayScreen::playerDies(void* dummy) {
+
 }
 
 void PlayScreen::playerRises(void* dummy) {

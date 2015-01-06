@@ -17,6 +17,11 @@ typedef struct{
 	uint8_t b5:1;
 	uint8_t b6:1;
 	uint8_t b7:1;
+#ifdef __cplusplus
+	const uint8_t asUInt8(){
+		return *(uint8_t*)this;
+	}
+#endif
 }Bits8;
 typedef struct{
 	uint16_t b0:1;
@@ -35,6 +40,11 @@ typedef struct{
 	uint16_t bd:1;
 	uint16_t be:1;
 	uint16_t bf:1;
+#ifdef __cplusplus
+	const uint16_t asUInt16(){
+		return *(uint16_t*)this;
+	}
+#endif
 }Bits16;
 
 typedef struct{
@@ -70,6 +80,11 @@ typedef struct{
 	uint32_t b1d:1;
 	uint32_t b1e:1;
 	uint32_t b1f:1;
+#ifdef __cplusplus
+	const uint32_t asUInt32(){
+		return *(uint32_t*)this;
+	}
+#endif
 }Bits32;
 
 typedef struct{
@@ -137,11 +152,21 @@ typedef struct{
 	uint64_t b3d:1;
 	uint64_t b3e:1;
 	uint64_t b3f:1;
+#ifdef __cplusplus
+	const uint64_t asUInt64(){
+		return *(uint64_t*)this;
+	}
+#endif
 }Bits64;
 
 typedef struct{
 	Bits8 lo;
 	Bits8 hi;
+#ifdef __cplusplus
+	const uint16_t asUInt16(){
+		return *(uint16_t*)this;
+	}
+#endif
 }Bits16_8;
 
 typedef struct{
@@ -149,12 +174,22 @@ typedef struct{
 	Bits8 lohi;
 	Bits8 hilo;
 	Bits8 hihi;
+#ifdef __cplusplus
+	const uint32_t asUInt32(){
+		return *(uint32_t*)this;
+	}
+#endif
 }Bits32_8;
 
 
 typedef struct{
 	Bits16 lo;
 	Bits16 hi;
+#ifdef __cplusplus
+	const uint32_t asUInt32(){
+		return *(uint32_t*)this;
+	}
+#endif
 }Bits32_16;
 
 typedef struct{	//Included only for completeness
@@ -166,6 +201,11 @@ typedef struct{	//Included only for completeness
 	Bits8 hilohi;
 	Bits8 hihilo;
 	Bits8 hihihi;
+#ifdef __cplusplus
+	const uint64_t asUInt64(){
+		return *(uint64_t*)this;
+	}
+#endif
 }Bits64_8;		//No, I don't know why anyone would ever use this.
 
 typedef struct{
@@ -173,11 +213,21 @@ typedef struct{
 	Bits16 lohi;
 	Bits16 hilo;
 	Bits16 hihi;
+#ifdef __cplusplus
+	const uint64_t asUInt64(){
+		return *(uint64_t*)this;
+	}
+#endif
 }Bits64_16;
 
 typedef struct{
 	Bits32 lo;
 	Bits32 hi;
+#ifdef __cplusplus
+	const uint64_t asUInt64(){
+		return *(uint64_t*)this;
+	}
+#endif
 }Bits64_32;
 
 typedef union {
@@ -187,6 +237,11 @@ typedef union {
 	Bits16_8 s8;
 	//Bits16
 	Bits16 b16;
+#ifdef __cplusplus
+	const uint16_t asUInt16(){
+		return *(uint16_t*)this;
+	}
+#endif
 }UBits16;
 
 typedef union {
@@ -200,6 +255,11 @@ typedef union {
 	Bits32_16 s16;
 	//Bits32
 	Bits32 b32;
+#ifdef __cplusplus
+	const uint32_t asUInt32(){
+		return *(uint32_t*)this;
+	}
+#endif
 }UBits32;
 
 typedef union {
@@ -217,6 +277,11 @@ typedef union {
 	Bits64_32 s32;
 	//Bits64
 	Bits64 b64;
+#ifdef __cplusplus
+	const uint64_t asUInt64(){
+		return *(uint64_t*)this;
+	}
+#endif
 }UBits64;
 
 

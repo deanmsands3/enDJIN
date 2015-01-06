@@ -18,12 +18,12 @@
 #include "Engine/ConfigParser.h"
 #include "Engine/Events/Events.h"
 #include "Entities/Entities.h"
+#include "Engine/EventProcessor.h"
 
 namespace enDJIN{
-	class GameScreen {
+	class GameScreen:public EventProcessor {
 	protected:
 		bool _active;
-		boost::lockfree::queue<enDJIN::Event, boost::lockfree::capacity<32>> _messagePump;
 		static boost::filesystem::path _dataPath;
 		sf::RenderWindow *renderWin;
 		std::map<sf::Event, voidFuncPtr> *eventMap;

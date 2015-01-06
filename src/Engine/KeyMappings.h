@@ -17,8 +17,8 @@ namespace enDJIN {
 
 class KeyMappings {
 	std::unordered_map<unsigned int,std::string> keyActionMap;
-	std::unordered_map<std::string,voidFuncPtr> *actionEffectMap;
-	std::unordered_map<unsigned int,voidFuncPtr> keyEffectMap;
+	std::unordered_map<std::string,TCallBack> *actionEffectMap;
+	std::unordered_map<unsigned int,TCallBack> keyEffectMap;
 public:
 	KeyMappings();
 	virtual ~KeyMappings();

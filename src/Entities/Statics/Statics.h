@@ -8,7 +8,7 @@
 #ifndef SRC_ENTITIES_STATICS_STATICS_H_
 #define SRC_ENTITIES_STATICS_STATICS_H_
 #include "Entities/Entity.h"
-#include "Actors/Actors.h"
+#include "Entities/Actors/Actors.h"
 
 
 

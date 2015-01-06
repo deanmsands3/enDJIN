@@ -19,3 +19,10 @@ EventHandler::~EventHandler() {
 }
 
 } /* namespace enDJIN */
+
+const void enDJIN::EventHandler::handleEvent(const enDJIN::Event nextEvent) {
+	TEventCallBackMap::const_iterator thisEvent=this->_eventCallBackMap.find(nextEvent.getType());
+	if(thisEvent==_eventCallBackMap.end()){
+		throw std::runtime_error(std::string("Event not found:")+std::to_string(nextEvent.getType().u32));
+	}
+}

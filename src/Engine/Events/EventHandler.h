@@ -9,11 +9,17 @@
 #define SRC_ENGINE_EVENTS_EVENTHANDLER_H_
 #include "Event.h"
 namespace enDJIN {
+typedef std::unordered_map<std::string, enDJIN::Event> TEventNameMap;
+typedef std::unordered_map<EventNumber, TCallBack> TEventCallBackMap;
+
 class GameScreen;
 class EventHandler {
+	TEventNameMap _eventNameMap;
+	TEventCallBackMap _eventCallBackMap;
 public:
 	EventHandler();
 	virtual ~EventHandler();
+	const void handleEvent(const enDJIN::Event nextEvent);
 };
 
 } /* namespace enDJIN */
