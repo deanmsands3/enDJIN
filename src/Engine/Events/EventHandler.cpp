@@ -25,4 +25,5 @@ const void enDJIN::EventHandler::handleEvent(const enDJIN::Event nextEvent) {
 	if(thisEvent==_eventCallBackMap.end()){
 		throw std::runtime_error(std::string("Event not found:")+std::to_string(nextEvent.getType().u32));
 	}
+	thisEvent->second(nextEvent.getPayload());
 }

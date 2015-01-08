@@ -5,6 +5,10 @@ include $(GAMESCREENS_FOLDER)Makefile.gamescreens
 EVENTS_FOLDER = $(ENGINE_FOLDER)Events/
 include $(EVENTS_FOLDER)Makefile.events
 
+AUDIO_FOLDER = $(ENGINE_FOLDER)Audio/
+include $(AUDIO_FOLDER)Makefile.audio
+
+
 ENGINE_OBJS = \
 	$(ENGINE_FOLDER)DataParser.o \
 	$(ENGINE_FOLDER)ConfigParser.o \
@@ -15,5 +19,7 @@ ENGINE_OBJS = \
 	$(ENGINE_FOLDER)TileMap.o \
 	$(ENGINE_FOLDER)EventProcessor.o \
 	$(GAMESCREENS_OBJS) \
-	$(EVENTS_OBJS)
+	$(EVENTS_OBJS) \
+	$(AUDIO_OBJS)
+
 	

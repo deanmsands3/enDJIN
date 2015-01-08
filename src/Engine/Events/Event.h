@@ -31,7 +31,7 @@ public:
 	Event(const EventNumber eventNumber, const void *newPayload);
 	Event(const EventType eventType, const uint16_t eventSubType, const void *newPayload);
 	Event(const Event& rhs);
-	const void *getPayload() const;
+	void *getPayload() const;
 	const EventNumber getType() const;
 
 };

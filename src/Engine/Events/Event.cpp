@@ -25,8 +25,8 @@ WindowEvent::WindowEvent() {
 ActorEvent::ActorEvent() {
 }
 
-const void* Event::getPayload() const{
-	return (const void *)this->payload;
+void* Event::getPayload() const{
+	return (void *)this->payload;
 }
 
 Event::Event(const EventNumber eventType, const void* newPayload) {

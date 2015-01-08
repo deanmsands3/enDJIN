@@ -1,0 +1,3 @@
+AUDIO_OBJS = \
+	$(AUDIO_FOLDER)AudioEngine.o \
+	$(AUDIO_FOLDER)AudioEventHandler.o

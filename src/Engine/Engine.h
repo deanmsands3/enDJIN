@@ -15,5 +15,6 @@
 #include "Level.h"
 #include "Tile.h"
 #include "TileMap.h"
-#include "Event/Events.h"
+#include "Events/Events.h"
+#include "Audio/Audio.h"
 #endif /* SRC_ENGINE_ENGINE_H_ */

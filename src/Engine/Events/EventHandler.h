@@ -14,12 +14,13 @@ typedef std::unordered_map<EventNumber, TCallBack> TEventCallBackMap;
 
 class GameScreen;
 class EventHandler {
+protected:
 	TEventNameMap _eventNameMap;
 	TEventCallBackMap _eventCallBackMap;
 public:
 	EventHandler();
 	virtual ~EventHandler();
-	const void handleEvent(const enDJIN::Event nextEvent);
+	const virtual void handleEvent(const enDJIN::Event nextEvent);
 };
 
 } /* namespace enDJIN */
