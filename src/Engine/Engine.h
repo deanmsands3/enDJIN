@@ -13,8 +13,8 @@
 #include "GameScreens/GameScreens.h"
 #include "KeyMappings.h"
 #include "Level.h"
-#include "Tile.h"
 #include "TileMap.h"
 #include "Events/Events.h"
 #include "Audio/Audio.h"
+#include "TileEngine.h"
 #endif /* SRC_ENGINE_ENGINE_H_ */

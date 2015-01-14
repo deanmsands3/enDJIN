@@ -15,7 +15,7 @@ ENGINE_OBJS = \
 	$(ENGINE_FOLDER)Game.o \
 	$(ENGINE_FOLDER)KeyMappings.o \
 	$(ENGINE_FOLDER)Level.o \
-	$(ENGINE_FOLDER)Tile.o \
+	$(ENGINE_FOLDER)TileEngine.o \
 	$(ENGINE_FOLDER)TileMap.o \
 	$(ENGINE_FOLDER)EventProcessor.o \
 	$(GAMESCREENS_OBJS) \

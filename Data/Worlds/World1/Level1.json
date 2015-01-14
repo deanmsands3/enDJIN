@@ -1,6 +1,41 @@
 {
-	"_comment":"Level1",	
+	"_comment":"Level1",
 	"entrance":{"x":10,"y":10},	
 	"exit":{"x":100,"y":10},
-	"tiledata":""
+	"layerset":{
+		"number":6,
+		"active":2,
+		"layers":{
+			"0":{
+				"size":{"w":256,"h":129},
+				"speed":2.0,
+				"tiles":{}
+			},
+			"1":{
+				"size":{"w":129,"h":65},
+				"speed":1.0,
+				"tiles":{}
+			},
+			"2":{
+				"size":{"w":129,"h":65},
+				"speed":1.0,
+				"tiles":{}
+			},
+			"3":{
+				"size":{"w":129,"h":65},
+				"speed":1.0,
+				"tiles":{}
+			},
+			"4":{
+				"size":{"w":65,"h":33},
+				"speed":0.50,
+				"tiles":{}
+			},
+			"5":{
+				"size":{"w":33,"h":17},
+				"speed":0.250,
+				"tiles":{}
+			}
+		}
+	}
 }

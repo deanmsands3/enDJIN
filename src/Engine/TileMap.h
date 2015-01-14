@@ -7,9 +7,9 @@
 
 #ifndef TILEMAP_H_
 #define TILEMAP_H_
-
+#include "TileEngine.h"
 namespace enDJIN {
-#include "Tile.h"
+
 class TileMap {
 public:
 	TileMap();
