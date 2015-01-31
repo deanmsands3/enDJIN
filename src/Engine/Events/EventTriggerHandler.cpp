@@ -9,7 +9,7 @@
 
 namespace enDJIN {
 
-EventTriggerHandler::EventTriggerHandler() {
+EventTriggerHandler::EventTriggerHandler():_handlesTriggers(true) {
 	// TODO Auto-generated constructor stub
 
 }

@@ -13,7 +13,7 @@
 #include <SFML/Graphics.hpp>
 #include <Thor/Particles/ParticleSystem.hpp>
 #include <Thor/Particles/EmissionInterface.hpp>
-#include <Thor/Vectors/PolarVector.hpp>
+#include <Thor/Vectors/PolarVector2.hpp>
 #include <Thor/Math/Random.hpp>
 #include <Thor/Time/CallbackTimer.hpp>
 #include "Util/Util.h"

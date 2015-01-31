@@ -1,11 +1,11 @@
 #We're in Windows. Swell.
-MINGW_ROOT = c:/MinGW/
+MINGW_ROOT = c:/msys64/mingw64/
 INCLUDES = -I $(MINGW_ROOT)include -I c:/Python27/include  -I $(SRC_FOLDER)
 TARGET =	enDJIN.exe
 
 SFML_LIBS= -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui
 UTIL_LIBS= -ljsoncpp -lssl
-BOOST_LIBS= -lboost_filesystem -lboost_system
+BOOST_LIBS= -lboost_filesystem-mt -lboost_system-mt
 #Libraries to be linked in.
 LIBS =  $(SFML_LIBS) $(UTIL_LIBS) $(BOOST_LIBS)
 
