@@ -2,10 +2,10 @@
     "_comment":"Entities JSON",
 	"actors":{
 		"folder":"Actors",
-		"file":"actors.json"
+		"image":"actors.json"
 	},
 	"static":{
 		"folder":"Statics",
-		"file":"statics.json"
+		"image":"statics.json"
 	}	
 }

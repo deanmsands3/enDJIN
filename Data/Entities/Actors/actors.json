@@ -2,19 +2,19 @@
 	"_comment":"Actors",	
 	"player": {
 		"folder": "Player",
-		"file":"player.json"		
+		"image":"player.json"		
     },
     "goblin": {
 		"folder": "Player",
-		"file":"player.json"		
+		"image":"player.json"		
 	},
     "willowarlock": {
 		"folder": "WilloWarlock",
-		"file":"willowarlock.json"		
+		"image":"willowarlock.json"		
     },
     "tankbot": {
 		"folder": "TankBot",
-		"file":"tankbot.json"		
+		"image":"tankbot.json"		
 	}
 }
 
