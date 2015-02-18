@@ -12,6 +12,10 @@
 #include <sstream>
 #include <string>
 #include <cstdio>
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
+#else
+	#include <sys/time.h>
+#endif // _WIN32
 
 inline std::string NowTime();
 
