@@ -27,4 +27,7 @@ uint32_t TileEngine::registerNewSprite(std::string spriteName, std::string textu
 	SpriteArray.push_back(thisSprite);
 	return SpriteArray.size()-1;
 }
+sf::Sprite *TileEngine::getSprite(unsigned long index){
+	return SpriteArray[index];
+}
 } /* namespace enDJIN */

@@ -7,10 +7,12 @@
 
 #ifndef TILEMAP_H_
 #define TILEMAP_H_
+#include <vector>
 #include "TileEngine.h"
 namespace enDJIN {
 
 class TileMap {
+	std::vector< std::vector <unsigned long> > TileMap;
 public:
 	TileMap();
 	virtual ~TileMap();

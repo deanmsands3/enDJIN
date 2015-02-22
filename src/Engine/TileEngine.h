@@ -24,6 +24,7 @@ public:
 	uint32_t registerNewSprite(std::string spriteName, std::string textureName,  int x,int y, int w, int h);
 	TileEngine();
 	virtual ~TileEngine();
+	sf::Sprite *getSprite(unsigned long index);
 };
 
 } /* namespace enDJIN */
