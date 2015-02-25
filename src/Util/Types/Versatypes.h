@@ -9,6 +9,9 @@
 #define SRC_UTIL_TYPES_VERSATYPES_H_
 #include "BitFields.h"
 
+#ifdef __cplusplus
+#include <functional>
+#endif
 
 #ifdef __cplusplus
 union VersaType16{
@@ -33,7 +36,7 @@ typedef union{
 	inline const int16_t asInt16(){
 		return i16;
 	}
-	VersaType16(uint16_t newU16=0):u16(newU16){}
+//	VersaType16(uint16_t newU16=0):u16(newU16){}
 	uint16_t getValue() const {
 	    return u16;
 	}
@@ -59,24 +62,18 @@ typedef union{
 	}u16n;
 	uint32_t u32;
 	int32_t i32;
-	VersaType16 v16[2];
+	union VersaType16 v16[2];
 	struct{
-	  VersaType16 lo;
-	  VersaType16 hi;
+	  union VersaType16 lo;
+	  union VersaType16 hi;
 	}v16n;
 
 	float  f;
 #ifdef __cplusplus
-	inline const uint32_t asUInt32(){
-		return u32;
-	}
-	inline const int32_t asInt32(){
-		return i32;
-	}
-	VersaType32(uint32_t newU32=0UL):u32(newU32){}
-	uint32_t getValue() const {
-	    return u32;
-	}
+	inline const uint32_t asUInt32(){return u32;}
+	inline const int32_t asInt32(){return i32;}
+	inline uint32_t getValue() const {return u32;}
+//	VersaType32(uint32_t newU32=0UL):u32(newU32){}
 };
 inline bool operator==(const VersaType32 &lhs, const VersaType32 &rhs){
 	return (lhs.getValue()==rhs.getValue());
@@ -140,7 +137,7 @@ typedef union{
 	    return u64;
 	}
 
-	VersaType64(uint64_t newU64=0ULL):u64(newU64){}
+//	VersaType64(uint64_t newU64=0ULL):u64(newU64){}
 };
 inline bool operator==(const VersaType64 &lhs, const VersaType64 &rhs){
 	return (lhs.getValue()==rhs.getValue());
