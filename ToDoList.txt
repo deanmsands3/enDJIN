@@ -8,3 +8,5 @@ Create asset manager.
 Create inventory system.
 Create menu system.
 Put all this on Trello.
+Start testing basic game engine.
+
