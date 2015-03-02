@@ -23,6 +23,9 @@
 
 namespace enDJIN{
 	class Game {
+		static FILE* pLogFile;
+		static bool enableLogging(std::string logFileName);
+		static bool gameOn(std::string index_xml);
 		static Game *_instance;
 		DataParser *dataparser;
 		ConfigParser *config;

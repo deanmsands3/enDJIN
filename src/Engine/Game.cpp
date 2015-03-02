@@ -8,6 +8,35 @@
 #include "Game.h"
 
 namespace enDJIN{
+bool Game::enableLogging(std::string logFileName){
+	try
+	{
+		pLogFile=std::fopen(logFileName.c_str(), "a");
+		if(pLogFile==NULL) throw std::runtime_error("Could not create log file.");
+		Output2FILE::Stream() = pLogFile;
+		FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
+		FILE_LOG(logINFO)<<"Logger started"<<std::endl;
+	}catch(std::exception &e){
+		std::cerr<<e.what()<<std::endl;
+		return FAILURE;
+	}
+	return SUCCESS;
+}
+
+
+bool Game::gameOn(std::string index_xml) {
+	//Run the game
+	try{
+		enDJIN::Game *theGame = enDJIN::Game::init(index_xml);
+		delete theGame;
+	}catch (const std::exception& e)
+	{
+		FILE_LOG(logERROR) << e.what() <<std::endl;
+		fclose(pLogFile);
+		return FAILURE;
+	}
+	return SUCCESS;
+}
 Game::Game(const std::string &index_json) {
 	setup(index_json);
 	loop();
@@ -64,4 +93,7 @@ void Game::loop(){
 }
 
 Game* Game::_instance=nullptr;
-};
+} //enDJIN namespace
+;
+
+
