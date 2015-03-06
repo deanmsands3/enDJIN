@@ -6,16 +6,42 @@
  */
 
 #include "Game.h"
+namespace logging = boost::log;
+namespace src = boost::log::sources;
+namespace sinks = boost::log::sinks;
+namespace keywords = boost::log::keywords;
 
 namespace enDJIN{
+//bool Game::enableLogging(std::string logFileName){
+//	try
+//	{
+//		pLogFile=std::fopen(logFileName.c_str(), "a");
+//		if(pLogFile==NULL) throw std::runtime_error("Could not create log file.");
+//		Output2FILE::Stream() = pLogFile;
+//		FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
+//		FILE_LOG(logINFO)<<"Logger started"<<std::endl;
+//	}catch(std::exception &e){
+//		std::cerr<<e.what()<<std::endl;
+//		return FAILURE;
+//	}
+//	return SUCCESS;
+//}
 bool Game::enableLogging(std::string logFileName){
 	try
 	{
-		pLogFile=std::fopen(logFileName.c_str(), "a");
-		if(pLogFile==NULL) throw std::runtime_error("Could not create log file.");
-		Output2FILE::Stream() = pLogFile;
-		FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
-		FILE_LOG(logINFO)<<"Logger started"<<std::endl;
+	    logging::add_file_log
+	    (
+	        keywords::file_name = "enDJIN_%N.log",                                        /*< file name pattern >*/
+	        keywords::rotation_size = 10 * 1024 * 1024,                                   /*< rotate files every 10 MiB... >*/
+	        keywords::time_based_rotation = sinks::file::rotation_at_time_point(0, 0, 0), /*< ...or at midnight >*/
+	        keywords::format = "[%TimeStamp%]: %Message%"                                 /*< log record format >*/
+	    );
+
+	    logging::core::get()->set_filter
+	    (
+	        logging::trivial::severity >= logging::trivial::info
+	    );
+
 	}catch(std::exception &e){
 		std::cerr<<e.what()<<std::endl;
 		return FAILURE;
