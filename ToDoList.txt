@@ -1,3 +1,4 @@
+Get SFGUI and Thor working again. This new MSYS setup...
 Update the README
 Move to private repository or at least move the assets to a private repository.
 Possibly work out multi-sprite player/monster characters.
