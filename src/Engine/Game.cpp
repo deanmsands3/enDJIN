@@ -57,8 +57,8 @@ bool Game::gameOn(std::string index_xml) {
 		delete theGame;
 	}catch (const std::exception& e)
 	{
-		FILE_LOG(logERROR) << e.what() <<std::endl;
-		fclose(pLogFile);
+//		FILE_LOG(logERROR) << e.what() <<std::endl;
+//		fclose(pLogFile);
 		return FAILURE;
 	}
 	return SUCCESS;

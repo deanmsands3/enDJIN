@@ -31,7 +31,7 @@
 
 namespace enDJIN{
 	class Game {
-		static FILE* pLogFile;
+		//static FILE* pLogFile;
 		static Game *_instance;
 		DataParser *dataparser;
 		ConfigParser *config;
