@@ -17,7 +17,7 @@
 #include <boost/log/utility/setup/common_attributes.hpp>
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/sources/record_ostream.hpp>
-//#include <SFGUI/SFGUI.hpp>
+#include <SFGUI/SFGUI.hpp>
 #include <SFML/Graphics.hpp>
 #include <Thor/Particles/ParticleSystem.hpp>
 #include <Thor/Particles/EmissionInterface.hpp>
@@ -32,8 +32,6 @@
 namespace enDJIN{
 	class Game {
 		static FILE* pLogFile;
-		static bool enableLogging(std::string logFileName);
-		static bool gameOn(std::string index_xml);
 		static Game *_instance;
 		DataParser *dataparser;
 		ConfigParser *config;
@@ -44,6 +42,8 @@ namespace enDJIN{
 		void loop();
 		Game(const std::string &index_json);
 	public:
+		static bool enableLogging(std::string logFileName);
+		static bool gameOn(std::string index_xml);
 		static const Game* getInstance();
 		static Game* init(const std::string &index_json);
 		virtual ~Game();
