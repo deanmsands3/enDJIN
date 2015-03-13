@@ -6,10 +6,6 @@
  */
 
 #include "Game.h"
-namespace logging = boost::log;
-namespace src = boost::log::sources;
-namespace sinks = boost::log::sinks;
-namespace keywords = boost::log::keywords;
 
 namespace enDJIN{
 //bool Game::enableLogging(std::string logFileName){
@@ -41,6 +37,8 @@ bool Game::enableLogging(std::string logFileName){
 	    (
 	        logging::trivial::severity >= logging::trivial::info
 	    );
+	    logging::add_common_attributes();
+
 
 	}catch(std::exception &e){
 		std::cerr<<e.what()<<std::endl;
@@ -57,8 +55,7 @@ bool Game::gameOn(std::string index_xml) {
 		delete theGame;
 	}catch (const std::exception& e)
 	{
-//		FILE_LOG(logERROR) << e.what() <<std::endl;
-//		fclose(pLogFile);
+
 		return FAILURE;
 	}
 	return SUCCESS;

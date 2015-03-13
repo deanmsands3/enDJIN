@@ -28,6 +28,10 @@
 #include "ConfigParser.h"
 #include "DataParser.h"
 #include "GameScreens/GameScreens.h"
+namespace logging = boost::log;
+namespace src = boost::log::sources;
+namespace sinks = boost::log::sinks;
+namespace keywords = boost::log::keywords;
 
 namespace enDJIN{
 	class Game {
@@ -42,6 +46,9 @@ namespace enDJIN{
 		void loop();
 		Game(const std::string &index_json);
 	public:
+
+	    src::severity_logger< logging::trivial::severity_level > lg;
+
 		static bool enableLogging(std::string logFileName);
 		static bool gameOn(std::string index_xml);
 		static const Game* getInstance();
