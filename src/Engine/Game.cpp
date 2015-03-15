@@ -49,6 +49,7 @@ bool Game::enableLogging(std::string logFileName){
 
 
 bool Game::gameOn(std::string index_xml) {
+	Game::testLogger();
 	//Run the game
 	try{
 		enDJIN::Game *theGame = enDJIN::Game::init(index_xml);
@@ -116,6 +117,15 @@ void Game::loop(){
 }
 
 Game* Game::_instance=nullptr;
+src::severity_logger< severity_level > Game::lg;
+void Game::testLogger(){
+	BOOST_LOG_SEV(lg, trace) << "A trace severity message";
+	    BOOST_LOG_SEV(lg, debug) << "A debug severity message";
+	    BOOST_LOG_SEV(lg, info) << "An informational severity message";
+	    BOOST_LOG_SEV(lg, warning) << "A warning severity message";
+	    BOOST_LOG_SEV(lg, error) << "An error severity message";
+	    BOOST_LOG_SEV(lg, fatal) << "A fatal severity message";
+}
 } //enDJIN namespace
 ;
 

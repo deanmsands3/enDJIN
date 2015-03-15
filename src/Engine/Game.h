@@ -32,7 +32,7 @@ namespace logging = boost::log;
 namespace src = boost::log::sources;
 namespace sinks = boost::log::sinks;
 namespace keywords = boost::log::keywords;
-
+using namespace logging::trivial;
 namespace enDJIN{
 	class Game {
 		//static FILE* pLogFile;
@@ -45,9 +45,10 @@ namespace enDJIN{
 		void setup(const std::string &index_json);
 		void loop();
 		Game(const std::string &index_json);
+		void testLogger();
 	public:
 
-	    src::severity_logger< logging::trivial::severity_level > lg;
+	    static src::severity_logger< logging::trivial::severity_level > lg;
 
 		static bool enableLogging(std::string logFileName);
 		static bool gameOn(std::string index_xml);
