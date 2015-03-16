@@ -28,6 +28,7 @@ class Actor: public Entity {
 private:
 	sf::Vector2f velocity;
 	ActorStates state;
+	unsigned long health;
 public:
 	void update();
 	Actor(std::string filename);
