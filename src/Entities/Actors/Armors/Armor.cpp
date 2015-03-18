@@ -6,7 +6,7 @@
  */
 
 #include "Armor.h"
-
+namespace enDJIN{
 Armor::Armor() {
 	// TODO Auto-generated constructor stub
 
@@ -15,4 +15,4 @@ Armor::Armor() {
 Armor::~Armor() {
 	// TODO Auto-generated destructor stub
 }
-
+};

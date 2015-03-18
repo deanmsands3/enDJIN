@@ -45,7 +45,7 @@ namespace enDJIN{
 		void setup(const std::string &index_json);
 		void loop();
 		Game(const std::string &index_json);
-		void testLogger();
+		static void testLogger();
 	public:
 
 	    static src::severity_logger< logging::trivial::severity_level > lg;

@@ -6,7 +6,7 @@
  */
 
 #include "Attack.h"
-
+namespace enDJIN {
 Attack::Attack() {
 	// TODO Auto-generated constructor stub
 
@@ -31,4 +31,5 @@ void Attack::setType(unsigned long type) {
 Attack::~Attack() {
 	// TODO Auto-generated destructor stub
 }
+};
 
