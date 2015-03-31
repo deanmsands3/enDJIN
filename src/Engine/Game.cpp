@@ -6,7 +6,7 @@
  */
 
 #include "Game.h"
-
+#define DEBUG_LOGGER
 namespace enDJIN{
 //bool Game::enableLogging(std::string logFileName){
 //	try
@@ -49,14 +49,17 @@ bool Game::enableLogging(std::string logFileName){
 
 
 bool Game::gameOn(std::string index_xml) {
+#ifdef DEBUG_LOGGER
 	Game::testLogger();
+	return SUCCESS; //Exit early to test just the logger.
+#endif
 	//Run the game
 	try{
 		enDJIN::Game *theGame = enDJIN::Game::init(index_xml);
 		delete theGame;
 	}catch (const std::exception& e)
 	{
-
+		BOOST_LOG_SEV(lg, fatal) << e.what()<<std::endl;
 		return FAILURE;
 	}
 	return SUCCESS;
