@@ -1,4 +1,12 @@
 #Actor Makefile
+#Subdirectories
+ARMOR_FOLDER=$(ACTOR_FOLDER)Armors/
+ATTACK_FOLDER=$(ACTOR_FOLDER)Attacks/
+
+#Include Makefiles
+include $(ARMOR_FOLDER)Makefile.armors
+include $(ATTACK_FOLDER)Makefile.attacks
 
 #Actor Objects
-ACTOR_OBJS=$(ACTOR_FOLDER)Actor.o $(ACTOR_FOLDER)Monster.o $(ACTOR_FOLDER)MonsterFactory.o $(ACTOR_FOLDER)Player.o
+ACTOR_OBJS=$(ACTOR_FOLDER)Actor.o $(ACTOR_FOLDER)Monster.o $(ACTOR_FOLDER)MonsterFactory.o $(ACTOR_FOLDER)Player.o $(ARMOR_FILES) $(ATTACK_FILES)
+

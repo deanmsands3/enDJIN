@@ -6,11 +6,7 @@
  */
 
 #include "Game.h"
-namespace logging = boost::log;
-namespace src = boost::log::sources;
-namespace sinks = boost::log::sinks;
-namespace keywords = boost::log::keywords;
-
+#define DEBUG_LOGGER
 namespace enDJIN{
 //bool Game::enableLogging(std::string logFileName){
 //	try
@@ -41,6 +37,8 @@ bool Game::enableLogging(std::string logFileName){
 	    (
 	        logging::trivial::severity >= logging::trivial::info
 	    );
+	    logging::add_common_attributes();
+
 
 	}catch(std::exception &e){
 		std::cerr<<e.what()<<std::endl;
@@ -51,14 +49,17 @@ bool Game::enableLogging(std::string logFileName){
 
 
 bool Game::gameOn(std::string index_xml) {
+#ifdef DEBUG_LOGGER
+	Game::testLogger();
+	return SUCCESS; //Exit early to test just the logger.
+#endif
 	//Run the game
 	try{
 		enDJIN::Game *theGame = enDJIN::Game::init(index_xml);
 		delete theGame;
 	}catch (const std::exception& e)
 	{
-		FILE_LOG(logERROR) << e.what() <<std::endl;
-		fclose(pLogFile);
+		BOOST_LOG_SEV(lg, fatal) << e.what()<<std::endl;
 		return FAILURE;
 	}
 	return SUCCESS;
@@ -119,6 +120,15 @@ void Game::loop(){
 }
 
 Game* Game::_instance=nullptr;
+src::severity_logger< severity_level > Game::lg;
+void Game::testLogger(){
+	BOOST_LOG_SEV(lg, trace) << "A trace severity message";
+	    BOOST_LOG_SEV(lg, debug) << "A debug severity message";
+	    BOOST_LOG_SEV(lg, info) << "An informational severity message";
+	    BOOST_LOG_SEV(lg, warning) << "A warning severity message";
+	    BOOST_LOG_SEV(lg, error) << "An error severity message";
+	    BOOST_LOG_SEV(lg, fatal) << "A fatal severity message";
+}
 } //enDJIN namespace
 ;
 

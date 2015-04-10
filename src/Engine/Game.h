@@ -17,7 +17,7 @@
 #include <boost/log/utility/setup/common_attributes.hpp>
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/sources/record_ostream.hpp>
-//#include <SFGUI/SFGUI.hpp>
+#include <SFGUI/SFGUI.hpp>
 #include <SFML/Graphics.hpp>
 #include <Thor/Particles/ParticleSystem.hpp>
 #include <Thor/Particles/EmissionInterface.hpp>
@@ -28,12 +28,14 @@
 #include "ConfigParser.h"
 #include "DataParser.h"
 #include "GameScreens/GameScreens.h"
-
+namespace logging = boost::log;
+namespace src = boost::log::sources;
+namespace sinks = boost::log::sinks;
+namespace keywords = boost::log::keywords;
+using namespace logging::trivial;
 namespace enDJIN{
 	class Game {
-		static FILE* pLogFile;
-		static bool enableLogging(std::string logFileName);
-		static bool gameOn(std::string index_xml);
+		//static FILE* pLogFile;
 		static Game *_instance;
 		DataParser *dataparser;
 		ConfigParser *config;
@@ -43,7 +45,13 @@ namespace enDJIN{
 		void setup(const std::string &index_json);
 		void loop();
 		Game(const std::string &index_json);
+		static void testLogger();
 	public:
+
+	    static src::severity_logger< logging::trivial::severity_level > lg;
+
+		static bool enableLogging(std::string logFileName);
+		static bool gameOn(std::string index_xml);
 		static const Game* getInstance();
 		static Game* init(const std::string &index_json);
 		virtual ~Game();

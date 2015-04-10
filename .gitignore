@@ -29,4 +29,8 @@
 *.hex
 enDJIN
 
+
 /Default/
+# Log files
+*.log
+
