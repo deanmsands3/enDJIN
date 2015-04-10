@@ -34,3 +34,8 @@ enDJIN
 # Log files
 *.log
 
+#Eclipse Files
+.cproject
+.project
+.settings/
+
