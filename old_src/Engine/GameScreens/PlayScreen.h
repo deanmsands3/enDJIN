@@ -22,6 +22,7 @@ public:
 	void playerMoves(void *direction);
 	void playerDies(void *dummy);
 	void playerRises(void *dummy);
+
 };
 
 } /* namespace enDJIN */
