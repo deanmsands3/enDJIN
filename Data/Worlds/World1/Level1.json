@@ -34,7 +34,12 @@
 			"5":{
 				"size":{"w":33,"h":17},
 				"speed":0.250,
-				"tiles":{}
+				"tiles":{
+					"1":"bluesky1",
+					"2":"bluesky2",
+					"3":"bluesky3",
+					"4":"bluesky4"
+				}
 			}
 		}
 	}
