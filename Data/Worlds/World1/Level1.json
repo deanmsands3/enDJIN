@@ -3,6 +3,16 @@
 	"entrance":{"x":10,"y":10},	
 	"exit":{"x":100,"y":10},
 	"layerset":{
+		"tile_images":{
+			"1":"bluesky1",
+			"2":"bluesky2",
+			"3":"bluesky3",
+			"4":"bluesky4",
+			"5":"blocktile1",
+			"6":"blocktile2",
+			"7":"blocktile3",
+			"8":"blocktile4"
+		},
 		"number":6,
 		"active":2,
 		"layers":{
@@ -35,10 +45,6 @@
 				"size":{"w":33,"h":17},
 				"speed":0.250,
 				"tiles":{
-					"1":"bluesky1",
-					"2":"bluesky2",
-					"3":"bluesky3",
-					"4":"bluesky4"
 				}
 			}
 		}
