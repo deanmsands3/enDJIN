@@ -10,4 +10,6 @@ Create inventory system.
 Create menu system.
 Put all this on Trello.
 Start testing basic game engine.
+Hire artists.
+Migrate this to private git. Find ways to coerce myself into keep working on it.
 

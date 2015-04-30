@@ -2,8 +2,9 @@
 INCLUDES = -I /usr/include/python2.7 -I /usr/include/jsoncpp -I  $(SRC_FOLDER)
 TARGET = enDJIN
 SFML_LIBS= -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui
-UTIL_LIBS= -ljsoncpp -lssl
-BOOST_LIBS= -lboost_filesystem -lboost_system
+UTIL_LIBS= -ljsoncpp -lssl -lpthread
+BOOST_LIBS= -lboost_date_time -lboost_chrono  -lboost_iostreams -lboost_thread -lboost_timer -lboost_locale -lboost_filesystem -lboost_system -lboost_log_setup -lboost_log
+
 #Libraries to be linked in.
 LIBS =  $(SFML_LIBS) $(UTIL_LIBS) $(BOOST_LIBS)
 
