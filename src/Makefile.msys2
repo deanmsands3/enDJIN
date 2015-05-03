@@ -5,7 +5,7 @@ TARGET =	enDJIN.exe
 
 SFML_LIBS= -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui
 UTIL_LIBS= -ljsoncpp -lssl  -lpthread
-BOOST_LIBS= -DBOOST_LOG_DYN_LINK -lboost_date_time-mt.dll -lboost_chrono-mt.dll  -lboost_iostreams-mt.dll -lboost_thread-mt.dll -lboost_timer-mt.dll -lboost_locale-mt.dll -lboost_filesystem-mt.dll -lboost_system-mt.dll -lboost_log_setup-mt.dll -lboost_log-mt.dll
+BOOST_LIBS= -lboost_date_time-mt.dll -lboost_chrono-mt.dll  -lboost_iostreams-mt.dll -lboost_thread-mt.dll -lboost_timer-mt.dll -lboost_locale-mt.dll -lboost_filesystem-mt.dll -lboost_system-mt.dll -lboost_log_setup-mt.dll -lboost_log-mt.dll
 #Libraries to be linked in.
 LIBS =  $(SFML_LIBS) $(UTIL_LIBS) $(BOOST_LIBS)
 

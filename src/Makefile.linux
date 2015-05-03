@@ -9,7 +9,7 @@ BOOST_LIBS= -lboost_date_time -lboost_chrono  -lboost_iostreams -lboost_thread -
 LIBS =  $(SFML_LIBS) $(UTIL_LIBS) $(BOOST_LIBS)
 
 #C++ Flags for compiling
-CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -std=c++11 $(INCLUDES)
+CXXFLAGS =	-O2 -g -Wall -fmessage-length=0 -std=c++11 $(INCLUDES) -DBOOST_LOG_DYN_LINK
 
 #Build Target
 $(TARGET):	$(OBJS)
