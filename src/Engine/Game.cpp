@@ -8,20 +8,7 @@
 #include "Game.h"
 #define DEBUG_LOGGER
 namespace enDJIN{
-//bool Game::enableLogging(std::string logFileName){
-//	try
-//	{
-//		pLogFile=std::fopen(logFileName.c_str(), "a");
-//		if(pLogFile==NULL) throw std::runtime_error("Could not create log file.");
-//		Output2FILE::Stream() = pLogFile;
-//		FILELog::ReportingLevel() = FILELog::FromString("DEBUG1");
-//		FILE_LOG(logINFO)<<"Logger started"<<std::endl;
-//	}catch(std::exception &e){
-//		std::cerr<<e.what()<<std::endl;
-//		return FAILURE;
-//	}
-//	return SUCCESS;
-//}
+
 bool Game::enableLogging(std::string logFileName){
 	try
 	{
@@ -64,11 +51,13 @@ bool Game::gameOn(std::string index_xml) {
 	}
 	return SUCCESS;
 }
+
+//Constructor
 Game::Game(const std::string &index_json) {
 	setup(index_json);
 	loop();
 }
-
+//Gets the singleton instance
 const Game* Game::getInstance() {
 	if(Game::_instance==nullptr) throw std::runtime_error("Game Object not initialized!");
 	return (const Game*)Game::_instance;
