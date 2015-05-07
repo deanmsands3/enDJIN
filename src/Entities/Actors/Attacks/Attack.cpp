@@ -7,29 +7,17 @@
 
 #include "Attack.h"
 namespace enDJIN {
-Attack::Attack() {
-	// TODO Auto-generated constructor stub
+Attack::Attack(unsigned long newIntensity, unsigned long newType):_intensity(newIntensity),_type(newType) {}
 
-}
+unsigned long Attack::getIntensity() const {return _intensity;}
 
-unsigned long Attack::getIntensity() const {
-	return intensity;
-}
+void Attack::setIntensity(unsigned long intensity) {_intensity = intensity;}
 
-void Attack::setIntensity(unsigned long intensity) {
-	this->intensity = intensity;
-}
+unsigned long Attack::getType() const {return _type;}
 
-unsigned long Attack::getType() const {
-	return type;
-}
+void Attack::setType(unsigned long type) {_type = type;}
 
-void Attack::setType(unsigned long type) {
-	this->type = type;
-}
+Attack::~Attack() {}
 
-Attack::~Attack() {
-	// TODO Auto-generated destructor stub
-}
 };
 

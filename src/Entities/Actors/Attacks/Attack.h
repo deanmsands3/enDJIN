@@ -10,10 +10,10 @@
 #include "../Actors.h"
 namespace enDJIN {
 class Attack {
-	unsigned long intensity;
-	unsigned long type;
+	unsigned long _intensity;
+	unsigned long _type;
 public:
-	Attack();
+	Attack(unsigned long newIntensity, unsigned long newType);
 	virtual ~Attack();
 	void damage(Actor * target);
 	unsigned long getIntensity() const;
