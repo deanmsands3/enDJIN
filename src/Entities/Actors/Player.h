@@ -9,6 +9,8 @@
 #define PLAYER_H_
 
 #include "Actor.h"
+#include "Armors/Armors.h"
+#include "Attacks/Attack.h"
 
 namespace enDJIN {
 

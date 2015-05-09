@@ -15,12 +15,12 @@
 namespace enDJIN {
 
 class MonsterFactory {
-	std::unordered_map<std::string, enDJIN::Monster> mapOfMonsterTemplates;
+	std::unordered_map<std::string, Monster> mapOfMonsterTemplates;
 public:
 	MonsterFactory(Json::Value *JV);
 	virtual ~MonsterFactory();
 };
 
-} /* namespace enDJIN */
+}; /* namespace enDJIN */
 
 #endif /* MONSTERFACTORY_H_ */
