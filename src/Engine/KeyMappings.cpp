@@ -30,5 +30,10 @@ bool KeyMappings::map_key(sf::Keyboard::Key keyPressed, std::string newEventName
 	}
 	return true;
 }
+TCallBack KeyMappings::callbackFromKey(unsigned int key){
+	std::string eventName=keyActionMap[key];
+	TCallBack thisFunction=(*actionEffectMap)[eventName];
+	return thisFunction;
+}
 
 } /* namespace enDJIN */

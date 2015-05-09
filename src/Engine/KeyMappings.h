@@ -23,6 +23,7 @@ public:
 	KeyMappings();
 	virtual ~KeyMappings();
 	bool map_key(sf::Keyboard::Key keyPressed,std::string newEventName);
+	TCallBack callbackFromKey(unsigned int key);
 };
 
 } /* namespace enDJIN */
