@@ -1,4 +1,0 @@
-#Armor Makefile
-
-#Armor Objects
-Armor_OBJS=$(ARMOR_FOLDER)Armor.o

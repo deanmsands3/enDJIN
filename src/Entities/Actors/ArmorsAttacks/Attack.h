@@ -7,8 +7,9 @@
 
 #ifndef SRC_ENTITIES_ATTACKS_ATTACK_H_
 #define SRC_ENTITIES_ATTACKS_ATTACK_H_
-#include "../Actors.h"
+#include "../Actor.h"
 namespace enDJIN {
+class Armor;
 class Attack {
 	unsigned long _intensity;
 	unsigned long _type;

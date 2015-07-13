@@ -5,12 +5,12 @@
  *      Author: Dean
  */
 
-#ifndef MONSTER_H_
-#define MONSTER_H_
+#ifndef ENDJIN_MONSTER_H_
+#define ENDJIN_MONSTER_H_
 
 #include "Actor.h"
-#include "Armors/Armors.h"
-#include "Attacks/Attack.h"
+#include "ArmorsAttacks/Armors.h"
+
 namespace enDJIN {
 //Known States:
 //Idle
@@ -43,4 +43,4 @@ public:
 
 }; /* namespace enDJIN */
 
-#endif /* MONSTER_H_ */
+#endif /* ENDJIN_MONSTER_H_ */

@@ -49,15 +49,15 @@ ActorStates Monster::updateDying(){
 }
 
 
-const Armor& enDJIN::Monster::getArmor() const {
+const Armor& Monster::getArmor() const {
 	return armor;
 }
 
-void enDJIN::Monster::setArmor(const Armor& armor) {
+void Monster::setArmor(const Armor& armor) {
 	this->armor = armor;
 }
 
-void receiveAttack(const Attack &attack){
+void Monster::receiveAttack(const Attack &attack){
 
 }
 

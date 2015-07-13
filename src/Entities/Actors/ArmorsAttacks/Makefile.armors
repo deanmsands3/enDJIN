@@ -1,0 +1,8 @@
+#Armor & Attacks Makefile
+
+#Armor Objects
+Armor_OBJS=$(ARMOR_FOLDER)Armor.o
+#Attack Objects
+ATTACK_OBJS=$(ARMOR_FOLDER)Attack.o
+
+ARMOR_ATTACK_OBJS=$(Armor_OBJS) $(ATTACK_OBJS)

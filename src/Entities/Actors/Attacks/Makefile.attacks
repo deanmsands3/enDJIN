@@ -1,4 +1,0 @@
-#Attack Makefile
-
-#Attack Objects
-ATTACK_OBJS=$(Attack_FOLDER)Attack.o

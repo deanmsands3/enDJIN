@@ -28,12 +28,13 @@ class Actor: public Entity {
 private:
 	sf::Vector2f velocity;
 	ActorStates state;
+	unsigned int innerState;
 	unsigned long health;
+	unsigned long baseHealth;
 public:
 	void update();
 	Actor(std::string filename);
 	virtual ~Actor();
-
 	sf::Vector2f getVelocity() const;
 	void setVelocity(sf::Vector2f velocity);
 	virtual ActorStates updateIdle();
@@ -46,6 +47,11 @@ public:
 	virtual ActorStates updateAttackingFar();
 	virtual ActorStates updateStunned();
 	virtual ActorStates updateDying();
+	void setInnerState(const unsigned int newInnerState);
+	unsigned int getInnerState() const;
+	void reduceHealth(const unsigned long damage);
+	void increaseHealth(const unsigned long healing);
+	void setBaseHealth(const unsigned long newBaseHealth);
 };
 
 } /* namespace enDJIN */

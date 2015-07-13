@@ -99,4 +99,24 @@ ActorStates Actor::updateDying(){
 	return DYING;
 }
 
+void Actor::setInnerState(const unsigned int newInnerState){
+	innerState=newInnerState;
+}
+unsigned int Actor::getInnerState() const{
+	return innerState;
+}
+void Actor::reduceHealth(const unsigned long damage){
+	if(health<=damage){health=0;}
+	else {health-=damage;}
+}
+
+void Actor::increaseHealth(const unsigned long healing){
+	health+=healing;
+	if(health>baseHealth){health=baseHealth;}
+
+}
+void Actor::setBaseHealth(const unsigned long newBaseHealth){
+	baseHealth=newBaseHealth;
+}
+
 } /* namespace enDJIN */
