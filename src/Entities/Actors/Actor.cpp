@@ -9,7 +9,7 @@
 
 namespace enDJIN {
 
-Actor::Actor(std::string filename):Entity(filename),state(IDLE) {
+Actor::Actor(std::string filename):Entity(filename),state(IDLE),armor(NULL) {
 
 }
 
@@ -117,6 +117,11 @@ void Actor::increaseHealth(const unsigned long healing){
 }
 void Actor::setBaseHealth(const unsigned long newBaseHealth){
 	baseHealth=newBaseHealth;
+}
+void Actor::receiveAttack(const Attack &attack){
+	if(this->isWearingArmor()){reduceHealth(attack.getIntensity());}
+	else{reduceHealth(attack.getIntensity());}
+
 }
 
 } /* namespace enDJIN */

@@ -11,4 +11,5 @@
 #include "Monster.h"
 #include "MonsterFactory.h"
 #include "Player.h"
+#include "ArmorsAttacks/Armors.h"
 #endif /* SRC_ENTITIES_ACTORS_ACTORS_H_ */

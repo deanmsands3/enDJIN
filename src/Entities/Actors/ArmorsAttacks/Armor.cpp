@@ -35,6 +35,15 @@ void Armor::registerArmor(const std::string name, const Armor& newArmor){
 	_armorRegistry[name]=newArmor;
 }
 
+double Armor::getAttackDamage(const Attack *attack){
+	return getAttackDamage(attack->getType())
+}
+double Armor::getAttackDamage(const std::string attack){
+
+}
+
+
+
 Armor::Armor(const Armor& that) {
 	_name=that._name;
 	for(auto thisAttack:that._attackResistance){

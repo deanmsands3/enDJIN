@@ -8,7 +8,7 @@
 #ifndef ACTOR_H_
 #define ACTOR_H_
 #include "Entities/Entity.h"
-
+#include "ArmorsAttacks/Armors.h"
 namespace enDJIN {
 
 typedef enum {
@@ -24,6 +24,8 @@ typedef enum {
 	DYING,
 	DEAD
 }ActorStates;
+class Attack;
+class Armor;
 class Actor: public Entity {
 private:
 	sf::Vector2f velocity;
@@ -31,6 +33,7 @@ private:
 	unsigned int innerState;
 	unsigned long health;
 	unsigned long baseHealth;
+	Armor armor;
 public:
 	void update();
 	Actor(std::string filename);
@@ -47,11 +50,13 @@ public:
 	virtual ActorStates updateAttackingFar();
 	virtual ActorStates updateStunned();
 	virtual ActorStates updateDying();
+	virtual void receiveAttack(const Attack &attack);
 	void setInnerState(const unsigned int newInnerState);
 	unsigned int getInnerState() const;
 	void reduceHealth(const unsigned long damage);
 	void increaseHealth(const unsigned long healing);
 	void setBaseHealth(const unsigned long newBaseHealth);
+	bool isWearingArmor();
 };
 
 } /* namespace enDJIN */

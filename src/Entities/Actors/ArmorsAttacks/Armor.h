@@ -24,6 +24,8 @@ public:
 	Armor(const Json::Value &jV);
 	virtual ~Armor();
 	static void registerArmor(const std::string name, const Armor& newArmor);
+	double getAttackDamage(const Attack *attack);
+	double getAttackDamage(const std::string attack);
 	Armor();
 	Armor(const Armor& that);
 };
