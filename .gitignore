@@ -1,3 +1,10 @@
+ Common Build Folders
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+[Rr]elWithDebugInfo/
+cmake-build-*/
+
 # Object files
 *.o
 *.ko
@@ -39,3 +46,21 @@ enDJIN
 .project
 .settings/
 
+# IDEs
+.vscode/
+.vs/
+.idea/
+
+
+# User Files
+CMakeUserPresets.json
+CMakeUserPresets.json.user
+
+# CMake Files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
