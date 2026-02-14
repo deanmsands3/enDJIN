@@ -1,4 +1,0 @@
-#Static Makefile
-
-#Statics Objects
-STATIC_OBJS=$(STATIC_FOLDER)Item.o

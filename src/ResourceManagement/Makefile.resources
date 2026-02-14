@@ -1,4 +1,0 @@
-#Resources Makefile
-
-#Include Makefiles
-RESOURCES_OBJS=$(RESOURCES_FOLDER)Repository.o 
