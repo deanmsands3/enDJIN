@@ -7,6 +7,5 @@
 
 #ifndef SRC_UTIL_UTIL_H_
 #define SRC_UTIL_UTIL_H_
-#include "Log/Log.h"
 #include "Types/Types.h"
 #endif /* SRC_UTIL_UTIL_H_ */

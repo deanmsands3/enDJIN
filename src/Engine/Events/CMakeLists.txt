@@ -7,4 +7,4 @@ set(events_SOURCE_FILES
 	EventTriggerHandler.cpp
 	EventTriggerHandler.h
 )
-add_library(Events ${events_SOURCE_FILES})
+add_library(enDJIN_Events ${events_SOURCE_FILES})

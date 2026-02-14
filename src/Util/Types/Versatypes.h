@@ -5,21 +5,17 @@
  *      Author: Dean
  */
 
+#pragma once
 #ifndef SRC_UTIL_TYPES_VERSATYPES_H_
 #define SRC_UTIL_TYPES_VERSATYPES_H_
+
+#include <functional>
+
 #include "BitFields.h"
 
-#ifdef __cplusplus
-#include <functional>
-#endif
-
-#ifdef __cplusplus
 union VersaType16{
-#else
-typedef union{
-#endif
 	uint8_t u8[2];
-	uint16_t u16;
+	uint16_t u16 {};
 	struct{
 		uint8_t lo;
 		uint8_t hi;
@@ -29,64 +25,37 @@ typedef union{
 		int8_t hi;
 	}i8n;
 	int16_t i16;
-#ifdef __cplusplus
-	inline const uint16_t asUInt16(){
-		return u16;
-	}
-	inline const int16_t asInt16(){
-		return i16;
-	}
-//	VersaType16(uint16_t newU16=0):u16(newU16){}
-	uint16_t getValue() const {
-	    return u16;
-	}
+	[[nodiscard]] uint16_t asUInt16() const;
+	[[nodiscard]] int16_t asInt16() const;
+	[[nodiscard]] uint16_t getValue() const;
+	bool operator==(const VersaType16 &rhs) const;
 };
-inline bool operator==(const VersaType16 &lhs, const VersaType16 &rhs){
-	return (lhs.getValue()==rhs.getValue());
-}
-#else
-}VersaType16;
-#endif
 
 
-#ifdef __cplusplus
 union VersaType32{
-#else
-typedef union{
-#endif
 	uint8_t u8[4];
 	uint16_t u16[2];
 	struct{
 		uint16_t lo;
 		uint16_t hi;
 	}u16n;
-	uint32_t u32;
+	uint32_t u32 {};
 	int32_t i32;
-	union VersaType16 v16[2];
+	VersaType16 v16[2];
 	struct{
-	  union VersaType16 lo;
-	  union VersaType16 hi;
+		VersaType16 lo;
+		VersaType16 hi;
 	}v16n;
 
 	float  f;
-#ifdef __cplusplus
-	inline const uint32_t asUInt32(){return u32;}
-	inline const int32_t asInt32(){return i32;}
-	inline uint32_t getValue() const {return u32;}
-//	VersaType32(uint32_t newU32=0UL):u32(newU32){}
+	[[nodiscard]] uint32_t asUInt32() const;
+	[[nodiscard]] int32_t asInt32() const;
+	[[nodiscard]] uint32_t getValue() const;
+	bool operator==(const VersaType32 &rhs) const;
 };
-inline bool operator==(const VersaType32 &lhs, const VersaType32 &rhs){
-	return (lhs.getValue()==rhs.getValue());
-}
-#else
-}VersaType32;
-#endif
 
-#ifdef __cplusplus
+
 union VersaType64{
-#else
-typedef union{
-#endif
 	uint8_t u8[8];
 	uint16_t u16[4];
 	struct{
@@ -100,7 +69,7 @@ typedef union{
 		uint32_t lo;
 		uint32_t hi;
 	}u32n;
-	uint64_t u64;
+	uint64_t u64 {};
 
 	int8_t i8[8];
 	int16_t i16[4];
@@ -126,49 +95,28 @@ typedef union{
 	}v32n;
 
 	double d;
-#ifdef __cplusplus
-	inline const uint64_t asUInt64(){
-		return u64;
-	}
-	inline const int64_t asInt64(){
-		return i64;
-	}
-	uint64_t getValue() const {
-	    return u64;
-	}
 
-//	VersaType64(uint64_t newU64=0ULL):u64(newU64){}
+	[[nodiscard]] uint64_t asUInt64() const;
+
+	[[nodiscard]] int64_t asInt64() const;
+
+	[[nodiscard]] uint64_t getValue() const;
+	bool operator==(const VersaType64 &rhs) const;
 };
-inline bool operator==(const VersaType64 &lhs, const VersaType64 &rhs){
-	return (lhs.getValue()==rhs.getValue());
-}
-#else
-}VersaType64;
-#endif
-
-#ifdef __cplusplus
-namespace std {
-    template <>
-        class hash<VersaType32>{
-        public :
-        size_t operator()(const VersaType32 &x ) const{
-            return hash<uint32_t>()(x.u32);
-        }
-    };
-}
-namespace std {
-    template <>
-        class hash<VersaType64>{
-        public :
-        size_t operator()(const VersaType64 &x ) const{
-            return hash<uint64_t>()(x.u64);
-        }
-    };
-}
-
-#endif
 
 
+template <>
+struct std::hash<VersaType32>{
+	size_t operator()(const VersaType32 &x ) const noexcept {
+		return hash<uint32_t>()(x.u32);
+	}
+};
+template <>
+struct std::hash<VersaType64>{
+	size_t operator()(const VersaType64 &x ) const noexcept {
+		return hash<uint64_t>()(x.u64);
+	}
+};
 
 
 #endif /* SRC_UTIL_TYPES_VERSATYPES_H_ */

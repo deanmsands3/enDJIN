@@ -6,6 +6,6 @@ set(Audio_SOURCE_FILES
 	Audio.h
 )
 
-add_library(server ${Audio_SOURCE_FILES})
+add_library(enDJIN_Audio ${Audio_SOURCE_FILES})
 
 

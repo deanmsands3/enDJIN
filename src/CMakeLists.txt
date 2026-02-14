@@ -1,41 +1,43 @@
-cmake_minimum_required (VERSION 2.8.11)
+cmake_minimum_required (VERSION 3.10)
 project(enDJIN_executable)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
-include(LibFindMacros)
-
-#INCLUDES = -I /usr/include/python2.7 -I /usr/include/jsoncpp -I  $(SRC_FOLDER)
-#TARGET = enDJIN
-#SFML_LIBS= -lsfml-system -lsfml-window -lsfml-graphics  -lsfml-network  -lsfml-audio -lsfgui
-#UTIL_LIBS= -ljsoncpp -lssl
-#BOOST_LIBS= -lboost_filesystem -lboost_system
-##Libraries to be linked in.
-#LIBS =  $(SFML_LIBS) $(UTIL_LIBS) $(BOOST_LIBS)
 
 #Subfolders
 add_subdirectory (Util)
 add_subdirectory (Engine)
-add_subdirectory (Entities)
+# add_subdirectory (Entities)
 add_subdirectory (ResourceManagement)
 add_subdirectory (Tiles)
 
-set(enDJIN_SOURCE_FILES enDJIN.cpp)
-
 #Executable
-add_executable (enDJIN ${enDJIN_SOURCE_FILES})
+add_executable (enDJIN enDJIN.cpp)
 
 #Link in dependency libraries
-set(Engine_LIBS Engine)
+set(Engine_LIBS enDJIN_Engine)
+
+## SFML
+### Configure SFML
+set(SFML_STATIC_LIBRARIES FALSE CACHE BOOL "Use static SFML librares")
+### General compiler options
+if (SFML_STATIC_LIBRARIES)
+	target_compile_definitions(enDJIN PRIVATE -DSFML_STATIC)
+endif()
+
+find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
+target_include_directories(enDJIN PRIVATE ${SFML_INCLUDE_DIRS})
+set(SFML_LIBS ${SFML_LIBRARIES})
 
 ## Link libraries
-set(BOOST_LIBS file_system system)
-find_package(Boost COMPONENTS ${BOOST_LIBS} REQUIRED)
-find_package(JsonCPP REQUIRED)
-include_directories(${JsonCPP_INCLUDE_DIRS})
 
-set(UTIL_LIBS ${JsonCPP_LIBRARIES})
-set(LIBS ${Engine_LIBS} ${SFML_LIBS} ${UTIL_LIBS} ${Boost_LIBRARIES})
+find_package(Boost COMPONENTS system REQUIRED CONFIG)
+find_package(jsoncpp  REQUIRED)
+target_include_directories(enDJIN PRIVATE ${jsoncpp_INCLUDE_DIRS})
 
-target_link_libraries(enDJIN ${LIBS})
+
+
+set(UTIL_LIBS ${jsoncpp_LIBRARIES})
+
+target_link_libraries(enDJIN PRIVATE ${Engine_LIBS} ${SFML_LIBS} ${UTIL_LIBS} ${Boost_LIBRARIES})
 
 

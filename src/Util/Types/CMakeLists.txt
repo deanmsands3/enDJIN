@@ -1,10 +1,8 @@
-set(types_SOURCE_FILES
-	BitFields.h
-	Defines.h
-	FunctionPointers.h
+add_library(enDJIN_Types
+ 	BitFields.h
 	Types.h
 	Versatypes.h
+	Versatypes.cpp
 )
-add_library(Types ${types_SOURCE_FILES})
 
 

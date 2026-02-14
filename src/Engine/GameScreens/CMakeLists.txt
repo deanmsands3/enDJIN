@@ -13,5 +13,5 @@ set(gamescreens_SOURCE_FILES
 	SplashScreen.cpp
 	SplashScreen.h
 )
-add_library(GameScreens ${gamescreens_SOURCE_FILES})
+add_library(enDJIN_GameScreens ${gamescreens_SOURCE_FILES})
 

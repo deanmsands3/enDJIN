@@ -21,12 +21,12 @@ set(Engine_SOURCE_FILES
 	TileMap.cpp
 	TileMap.h
 )
-add_library(server ${Engine_SOURCE_FILES})
-target_link_libraries (Engine Audio)
-target_link_libraries (Engine Events)
-target_link_libraries (Engine GameScreens)
-target_link_libraries (Engine Util)
-target_link_libraries (Engine Entities)
-target_link_libraries (Engine ResourceManagement)
-target_link_libraries (Engine Tiles)
+add_library(enDJIN_Engine ${Engine_SOURCE_FILES})
+target_link_libraries (enDJIN_Engine enDJIN_Audio)
+target_link_libraries (enDJIN_Engine enDJIN_Events)
+target_link_libraries (enDJIN_Engine enDJIN_GameScreens)
+target_link_libraries (enDJIN_Engine enDJIN_Util)
+# target_link_libraries (enDJIN_Engine enDJIN_Entities)
+target_link_libraries (enDJIN_Engine enDJIN_ResourceManagement)
+target_link_libraries (enDJIN_Engine enDJIN_Tiles)
 
