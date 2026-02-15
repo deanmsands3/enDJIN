@@ -5,11 +5,14 @@
  *      Author: Dean
  */
 
+#pragma once
 #ifndef ENGINE_EVENT_H_
 #define ENGINE_EVENT_H_
+
 #include <SFML/Graphics.hpp>
-#include "Util/Util.h"
 #include <unordered_map>
+#include "../../Util/Util.h"
+
 namespace enDJIN {
 typedef VersaType32 EventNumber;
 typedef enum {
@@ -28,11 +31,11 @@ protected:
 	EventNumber type;
 public:
 	Event();
-	Event(const EventNumber eventNumber, const void *newPayload);
-	Event(const EventType eventType, const uint16_t eventSubType, const void *newPayload);
+	Event(EventNumber eventNumber, const void *newPayload);
+	Event(EventType eventType, uint16_t eventSubType, const void *newPayload);
 	Event(const Event& rhs);
-	void *getPayload() const;
-	const EventNumber getType() const;
+	[[nodiscard]] void *getPayload() const;
+	[[nodiscard]] const EventNumber getType() const;
 
 };
 
@@ -66,22 +69,19 @@ public:
 };
 
 } /* namespace enDJIN */
-namespace std {
-    template <>
-        class hash<enDJIN::Event>{
-        public :
-        size_t operator()(const enDJIN::Event &x ) const{
-        	register uint64_t eventHash=0LL;
-        	register int iterSteps;
-        	register int iter=0;
-        	iterSteps=sizeof(enDJIN::EventNumber) + sizeof(void*);
-        	for(iter=0;iter<iterSteps;iter++){
-        		eventHash*=31ULL;
-        		eventHash+=(uint64_t)(((uint8_t*)(&x))[iter]);
-        	}
-            return hash<uint64_t>()(eventHash);
-        }
-    };
-}
+template <>
+struct std::hash<enDJIN::Event>{
+	size_t operator()(const enDJIN::Event &x ) const noexcept {
+		uint64_t eventHash=0LL;
+		int iter=0;
+		constexpr int iterSteps = sizeof(enDJIN::EventNumber) + sizeof(void *);
+		const auto *ptr = reinterpret_cast<uint8_t *>(&eventHash);
+		for(iter=0;iter<iterSteps;iter++){
+			eventHash*=31ULL;
+			eventHash+=static_cast<uint64_t>(ptr[iter]);
+		}
+		return hash<uint64_t>()(eventHash);
+	}
+};
 
 #endif /* ENGINE_EVENT_H_ */

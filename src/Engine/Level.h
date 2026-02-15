@@ -9,8 +9,8 @@
 #define LEVEL_H_
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
-#include "Engine/Events/Events.h"
-#include "Util/Util.h"
+#include "../Engine/Events/Events.h"
+#include "../Util/Util.h"
 namespace enDJIN {
 
 class Level {

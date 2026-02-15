@@ -7,9 +7,9 @@
 
 #ifndef GAMESCREENFACTORY_H_
 #define GAMESCREENFACTORY_H_
-#include "Util/Util.h"
+#include "../../Util/Util.h"
 #include <unordered_map>
-#include "Engine/ConfigParser.h"
+#include "../ConfigParser.h"
 #include "GameScreen.h"
 #include "MenuScreen.h"
 #include "PlayScreen.h"

@@ -8,7 +8,7 @@
 #ifndef SRC_ENGINE_AUDIO_AUDIOEVENTHANDLER_H_
 #define SRC_ENGINE_AUDIO_AUDIOEVENTHANDLER_H_
 #include <SFML/Audio.hpp>
-#include "Engine/Events/EventHandler.h"
+#include "../Events/EventHandler.h"
 namespace enDJIN {
 
 class AudioEventHandler: public EventHandler {

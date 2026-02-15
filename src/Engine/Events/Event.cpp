@@ -34,6 +34,9 @@ Event::Event(const EventNumber eventType, const void* newPayload) {
 	this->payload=const_cast<void*>(newPayload);
 }
 
+Event::Event(EventType eventType, uint16_t eventSubType, const void *newPayload) {
+}
+
 const VersaType32 Event::getType() const{
 	return (const VersaType32)this->type;
 }

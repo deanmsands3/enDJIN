@@ -19,7 +19,7 @@ protected:
 public:
 	virtual bool processQueue();
 	bool getNextEvent(enDJIN::Event &nextEvent);
-	bool pushEvent(enDJIN::Event newEvent);
+	bool pushEvent(const enDJIN::Event& newEvent);
 	EventProcessor();
 	virtual ~EventProcessor();
 	const enDJIN::EventHandler* getEventHandler() const;

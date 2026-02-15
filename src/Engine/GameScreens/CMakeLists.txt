@@ -14,4 +14,5 @@ set(gamescreens_SOURCE_FILES
 	SplashScreen.h
 )
 add_library(enDJIN_GameScreens ${gamescreens_SOURCE_FILES})
+target_include_directories(enDJIN_GameScreens  PRIVATE ${SFML_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${JSONCPP_INCLUDE_DIRS})
 

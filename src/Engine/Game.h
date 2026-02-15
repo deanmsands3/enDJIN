@@ -8,7 +8,7 @@
 #ifndef GAME_H_
 #define GAME_H_
 #include <stdexcept>
-#include <boost/filesystem.hpp>
+#include <filesystem>
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/log/expressions.hpp>

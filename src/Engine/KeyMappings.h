@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <exception>
 
-#include "Util/Util.h"
+#include "../Util/Util.h"
 namespace enDJIN {
 
 class KeyMappings {

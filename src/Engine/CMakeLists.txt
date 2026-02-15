@@ -22,6 +22,7 @@ set(Engine_SOURCE_FILES
 	TileMap.h
 )
 add_library(enDJIN_Engine ${Engine_SOURCE_FILES})
+target_include_directories(enDJIN_Engine  PRIVATE ${SFML_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${JSONCPP_INCLUDE_DIRS})
 target_link_libraries (enDJIN_Engine enDJIN_Audio)
 target_link_libraries (enDJIN_Engine enDJIN_Events)
 target_link_libraries (enDJIN_Engine enDJIN_GameScreens)

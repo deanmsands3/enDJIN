@@ -26,7 +26,7 @@ bool EventProcessor::getNextEvent(enDJIN::Event &nextEvent) {
 	return _messagePump.pop(nextEvent);
 }
 
-bool EventProcessor::pushEvent(const enDJIN::Event newEvent) {
+bool EventProcessor::pushEvent(const enDJIN::Event& newEvent) {
 	return _messagePump.push(newEvent);
 }
 

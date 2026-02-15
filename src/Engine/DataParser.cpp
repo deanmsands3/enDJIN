@@ -43,7 +43,7 @@ Json::Value *DataParser::_parseFile(std::string pathName){
 	return target;
 }
 
-Json::Value *DataParser::_parsePath(boost::filesystem::path pathName){
+Json::Value *DataParser::_parsePath(std::filesystem::path pathName){
 	return _parseFile(pathName.string());
 }
 
@@ -73,24 +73,24 @@ const std::string DataParser::getDataFolder() {
 }
 
 void DataParser::setDataFolder(const char* dataFolder) {
-	boost::filesystem::current_path(dataFolder);
-	DataParser::_dataFolder = boost::filesystem::current_path();
+	std::filesystem::current_path(dataFolder);
+	DataParser::_dataFolder = std::filesystem::current_path();
 }
 
 void DataParser::setDataFolder(const std::string& dataFolder) {
-	boost::filesystem::current_path(dataFolder);
-	DataParser::_dataFolder = boost::filesystem::current_path();
+	std::filesystem::current_path(dataFolder);
+	DataParser::_dataFolder = std::filesystem::current_path();
 }
 
-void DataParser::setDataFolder(const boost::filesystem::path& folderPath) {
-	boost::filesystem::current_path(folderPath);
-	DataParser::_dataFolder = boost::filesystem::current_path();
+void DataParser::setDataFolder(const std::filesystem::path& folderPath) {
+	std::filesystem::current_path(folderPath);
+	DataParser::_dataFolder = std::filesystem::current_path();
 }
 
 DataParser::~DataParser() {
 	delete _jvIndex;
 }
 //Statics
-boost::filesystem::path DataParser::_dataFolder;
+std::filesystem::path DataParser::_dataFolder;
 
 } /* namespace enDJIN */

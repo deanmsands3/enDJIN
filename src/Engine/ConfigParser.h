@@ -11,7 +11,8 @@
 
 #define SCREEN_WIDTH	1600
 #define SCREEN_HEIGHT	900
-#include"Util/Util.h"
+
+#include"../Util/Util.h"
 #include <array>
 #include <memory>
 #include <cstdlib>
@@ -29,7 +30,7 @@ namespace enDJIN{
 	public:
 		ConfigParser(const Json::Value *newConfig);
 		virtual ~ConfigParser();
-		const Json::Value *getConfig() const;
+		[[nodiscard]] const Json::Value *getConfig() const;
 		KeyMappings *generateKeyMap();
 		Json::Value getItem(std::string itemName, int index);
 	};

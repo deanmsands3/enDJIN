@@ -94,12 +94,12 @@ std::map<sf::Event, voidFuncPtr>* GameScreen::getEventMap(){
 GameScreen* GameScreen::newGameScreen(sf::RenderWindow *window, KeyMappings *keyMap, Json::Value *JV){
 	return new GameScreen(window, keyMap, JV);
 }
-boost::filesystem::path GameScreen::_dataPath;
+std::filesystem::path GameScreen::_dataPath;
 
-const boost::filesystem::path& GameScreen::getDataPath() {
+const std::filesystem::path& GameScreen::getDataPath() {
 	return _dataPath;
 }
-void GameScreen::setDataPath(const boost::filesystem::path& dataPath) {
+void GameScreen::setDataPath(const std::filesystem::path& dataPath) {
 	_dataPath = dataPath;
 }
 GameScreen* GameScreen::getNextGameScreen() {

@@ -7,7 +7,7 @@
 
 #ifndef SRC_ENGINE_AUDIO_AUDIOENGINE_H_
 #define SRC_ENGINE_AUDIO_AUDIOENGINE_H_
-#include "Engine/EventProcessor.h"
+#include "../EventProcessor.h"
 namespace enDJIN {
 
 class AudioEngine: public EventProcessor {

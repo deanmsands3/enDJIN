@@ -7,7 +7,7 @@
 
 #ifndef TILE_H_
 #define TILE_H_
-#include "Util/Util.h"
+#include "../Util/Util.h"
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <unordered_map>
